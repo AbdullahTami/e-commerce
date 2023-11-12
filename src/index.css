@@ -1,7 +1,32 @@
+/* 
+
+SPACING SYSTEM (px) 
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
+
+FONT SIZE SYSTEM (px) 
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 68 / 98 
+
+MAIN COLOR:  #ff5a5a
+
+GREY COLOR:  #171717  #374151  #8c8c8c
+
+
+
+
+*/
+
 :root {
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
+
+  --main-color: #ff5a5a;
+
+  --grey-900: #171717;
+  --gray-700: #252525;
+  --grey-600: #374151;
+  --grey-500: #626262;
+  --grey-400: #8c8c8c;
 }
 
 *,
@@ -17,8 +42,8 @@ html {
 }
 
 body {
-  color: var(--color-grey-700);
-  transition: color 0.3s, background-color 0.3s;
+  font-family: "Roboto", sans-serif;
+  color: var(--grey-700);
 }
 
 input,
@@ -51,7 +76,8 @@ select:focus {
   outline-offset: -1px;
 } */
 
-/* Parent selector, finally 😃 */
+/* PARENT SELECTOR */
+
 button:has(svg) {
   line-height: 0;
 }
