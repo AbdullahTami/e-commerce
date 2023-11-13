@@ -63,9 +63,12 @@ const StyledNavLink = styled(NavLink)`
     font-size: 1.6rem;
     font-weight: 600;
     background: white;
-  }
-  button:active {
-    background: #f1f1f1;
+    &:hover {
+      background: #fbfbfb;
+    }
+    &:active {
+      background: #f1f1f1;
+    }
   }
 `;
 

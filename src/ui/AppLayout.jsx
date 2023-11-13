@@ -14,21 +14,12 @@ const Main = styled.main`
   overflow: scroll;
 `;
 
-const Container = styled.div`
-  /* display: flex;
-  flex-direction: column; */
-  max-width: 120rem;
-  margin: 0 auto;
-`;
-
 function AppLayout() {
   return (
     <StyledAppLayout>
       <Header />
       <Main>
-        <Container>
-          <Outlet />
-        </Container>
+        <Outlet />
       </Main>
       <CartOverview />
     </StyledAppLayout>
