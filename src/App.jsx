@@ -3,13 +3,15 @@ import AppLayout from "./ui/AppLayout";
 import Product from "./features/product/Product";
 import Cart from "./features/cart/Cart";
 import PageNotFound from "./ui/PageNotFound";
+import HomePage from "./ui/HomePage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route index element={<Navigate replace to="product" />} />
+          <Route index element={<Navigate replace to="home" />} />
+          <Route path="home" element={<HomePage />} />
           <Route path="product" element={<Product />} />
           <Route path="product/:productId" element={<div>Yoo whaat!</div>} />
           <Route path="cart" element={<Cart />} />

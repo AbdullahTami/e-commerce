@@ -4,11 +4,8 @@ import Container from "./Container";
 import hero from "../assets/hero_image.png";
 
 const StyledHeroSection = styled.section`
-  /* max-width: 100%; */
-  /* margin: 0 auto; */
   height: 100vh;
   background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
-  font-size: 1.6rem;
   padding: 0 3.2rem;
 `;
 

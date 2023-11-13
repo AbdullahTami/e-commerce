@@ -1,11 +1,5 @@
-import Hero from "../../ui/Hero";
-
 function Product() {
-  return (
-    <div>
-      <Hero />
-    </div>
-  );
+  return <div>product</div>;
 }
 
 export default Product;

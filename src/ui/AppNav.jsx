@@ -30,20 +30,6 @@ const StyledNavLink = styled(NavLink)`
     color: var(--main-color);
   }
 
-  & svg {
-    width: 3rem;
-    height: 3rem;
-    color: var(--grey-400);
-    transition: all 0.3s;
-  }
-
-  &:hover svg,
-  &:active svg,
-  &.active:link svg,
-  &.active:visited svg {
-    color: var(--main-color);
-  }
-
   & hr {
     width: 80%;
     height: 0.3rem;
@@ -54,13 +40,19 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 function AppNav() {
-  const [selectedPage, setSelectedPage] = useState("product");
+  const [selectedPage, setSelectedPage] = useState("home");
   return (
     <nav>
       <NavList>
+        <li onClick={() => setSelectedPage("home")}>
+          <StyledNavLink to="home">
+            <span>home</span>
+            {selectedPage === "home" && <hr />}
+          </StyledNavLink>
+        </li>
         <li onClick={() => setSelectedPage("product")}>
           <StyledNavLink to="/product">
-            <span>Home</span>
+            <span>shop</span>
             {selectedPage === "product" && <hr />}
           </StyledNavLink>
         </li>
