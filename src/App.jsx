@@ -3,7 +3,7 @@ import AppLayout from "./ui/AppLayout";
 import Product from "./features/product/Product";
 import Cart from "./features/cart/Cart";
 import PageNotFound from "./ui/PageNotFound";
-import HomePage from "./ui/HomePage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (

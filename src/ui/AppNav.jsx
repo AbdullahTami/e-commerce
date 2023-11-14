@@ -45,7 +45,7 @@ function AppNav() {
     <nav>
       <NavList>
         <li onClick={() => setSelectedPage("home")}>
-          <StyledNavLink to="home">
+          <StyledNavLink to="/home">
             <span>home</span>
             {selectedPage === "home" && <hr />}
           </StyledNavLink>

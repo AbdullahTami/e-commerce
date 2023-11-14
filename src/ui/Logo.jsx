@@ -41,7 +41,7 @@ const Img = styled.img`
 function Logo() {
   return (
     <StyledLogo>
-      <Link to="/">
+      <Link to="home">
         <Img src={logo} alt="logo-picture" />
         <p> SHOPPER </p>
       </Link>

@@ -2,6 +2,7 @@ import { BsArrowRight } from "react-icons/bs";
 import styled from "styled-components";
 import Container from "./Container";
 import hero from "../assets/hero_image.png";
+import Button from "./Button";
 
 const StyledHeroSection = styled.section`
   height: 100vh;
@@ -34,29 +35,6 @@ const HeroText = styled.div`
     line-height: 1;
     letter-spacing: -0.01rem;
   }
-
-  button {
-    text-transform: capitalize;
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 2rem;
-    padding: 1.6rem 3.2rem;
-    transition: background-color 0.3s;
-    transition: all 0.3s;
-    border: none;
-    border-radius: 1000px;
-    background: var(--main-color);
-    font-weight: 600;
-    color: white;
-    &:active {
-      background: #ff1111;
-    }
-    &:hover {
-      background: #ff2626;
-    }
-  }
 `;
 
 const Img = styled.img`
@@ -83,12 +61,12 @@ function Hero() {
           <HeroText>
             <span className="sub-title">new arrivals only</span>
             <h1>new👋 collection for everyone</h1>
-            <button>
+            <Button>
               latest collection
               <span>
                 <BsArrowRight />
               </span>
-            </button>
+            </Button>
           </HeroText>
 
           <Img src={hero} alt="hero-picture" />
