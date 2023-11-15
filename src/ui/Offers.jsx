@@ -4,7 +4,7 @@ import exclusive_image from "../assets/exclusive_image.png";
 import Button from "./Button";
 
 const StyledOffersSection = styled.section`
-  padding: 12.8rem 3.2rem;
+  padding: 12.8rem 3.2rem 6.4rem;
 
   /* max-width: 120rem;
   margin: 0 auto; */
