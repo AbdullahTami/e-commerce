@@ -66,12 +66,25 @@ const Form = styled.form`
   }
 `;
 
+const ErrorText = styled.p`
+  color: #b91c1c;
+  font-size: 1.2rem;
+  background: #fee2e2;
+  padding: 0.8rem;
+`;
+
 function NewsLetter() {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState(false);
   function handleSubmit(e) {
     e.preventDefault();
-    if (!email) return;
-    setEmail("");
+    if (!email) {
+      setError(true);
+      return;
+    } else {
+      setError(false);
+      setEmail("");
+    }
   }
   return (
     <StyledNewsLetterSection>
@@ -84,6 +97,11 @@ function NewsLetter() {
               and amazing <br /> offers delivered directly in your inbox.
             </p>
           </NewsLetterText>
+          {error && (
+            <ErrorText>
+              You have provide an email address in order to subscribe
+            </ErrorText>
+          )}
           <Form onSubmit={handleSubmit}>
             <input
               value={email}
