@@ -1,6 +1,7 @@
 import PopularProducts from "../features/product/PopularProducts";
 import Hero from "../ui/Hero";
 import NewCollections from "../ui/NewCollections";
+import NewsLetter from "../ui/NewsLetter";
 import Offers from "../ui/Offers";
 
 function HomePage() {
@@ -10,6 +11,7 @@ function HomePage() {
       <PopularProducts />
       <Offers />
       <NewCollections />
+      <NewsLetter />
     </div>
   );
 }

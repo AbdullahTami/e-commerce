@@ -20,7 +20,7 @@ const StyledNewCollection = styled.div`
   gap: 2rem;
   .slick-prev::before,
   .slick-next::before {
-    color: var(--grey-500);
+    color: var(--main-color);
     font-size: 32px;
   }
 

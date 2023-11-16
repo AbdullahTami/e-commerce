@@ -1,7 +1,8 @@
 import { Outlet } from "react-router";
-import CartOverview from "../features/cart/CartOverview";
+// import CartOverview from "../features/cart/CartOverview";
 import Header from "./Header";
 import styled from "styled-components";
+import Footer from "./Footer";
 
 const StyledAppLayout = styled.div`
   display: grid;
@@ -11,7 +12,7 @@ const StyledAppLayout = styled.div`
 `;
 
 const Main = styled.main`
-  overflow: scroll;
+  /* overflow: scroll; */
 `;
 
 function AppLayout() {
@@ -21,7 +22,7 @@ function AppLayout() {
       <Main>
         <Outlet />
       </Main>
-      <CartOverview />
+      <Footer />
     </StyledAppLayout>
   );
 }
