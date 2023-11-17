@@ -78,6 +78,10 @@ const Form = styled.form`
       }
     }
   }
+  button:active {
+    outline: 1px solid black;
+    outline-offset: -1px;
+  }
 `;
 
 const ErrorText = styled.p`
@@ -107,17 +111,6 @@ function NewsLetter() {
         setEmail("");
       }, 1000);
     }
-    // setTimeout(() => {
-    //   setIsLoading(true);
-    //   if (!email) {
-    //     setError(true);
-    //     return;
-    //   } else {
-    //     setError(false);
-    //     setIsLoading(false);
-    //     setEmail("");
-    //   }
-    // }, 2000);
   }
   return (
     <StyledNewsLetterSection>

@@ -33,6 +33,10 @@ const FilterButton = styled.button`
     background-color: var(--main-color);
     color: white;
   }
+  &:focus {
+    background-color: var(--main-color);
+    color: white;
+  }
 `;
 
 function Filter() {
