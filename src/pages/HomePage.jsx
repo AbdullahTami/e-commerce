@@ -1,4 +1,4 @@
-import PopularProducts from "../features/product/PopularProducts";
+import PopularProducts from "../ui/PopularProducts";
 import Hero from "../ui/Hero";
 import NewCollections from "../ui/NewCollections";
 import NewsLetter from "../ui/NewsLetter";

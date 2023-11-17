@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Container from "../../ui/Container";
-import popular_products from "../../assets/data";
-import Item from "../../ui/Item";
+import Container from "./Container";
+import popular_products from "../assets/data";
+import Item from "./Item";
 
 const StyledPopularSection = styled.section`
   padding: 12.8rem 3.2rem;
