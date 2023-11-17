@@ -54,7 +54,7 @@ function NewCollections() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2000,
   };
 
   return (
@@ -62,13 +62,11 @@ function NewCollections() {
       <Container>
         <StyledNewCollection>
           <h1>#NewCollections</h1>
-          {/* <StyledNewCollectionItems> */}
           <Slider {...settings}>
             {new_collection.map((item) => (
               <Item key={item.id} item={item} />
             ))}
           </Slider>
-          {/* </StyledNewCollectionItems> */}
         </StyledNewCollection>
       </Container>
     </NewCollectionSection>

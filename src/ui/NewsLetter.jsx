@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Container from "./Container";
 import { useState } from "react";
+import { MdError } from "react-icons/md";
 
 const StyledNewsLetterSection = styled.section`
   padding: 0 3.2rem 4.8rem;
@@ -40,17 +41,25 @@ const Form = styled.form`
   /* width: 50rem; */
   width: 70rem;
   height: 6rem;
-  border-radius: 89px;
-  border: 1px solid #e3e3e3;
+  position: relative;
+  /* border-radius: 89px;
+  border: 1px solid #e3e3e3; */
   input {
-    width: 50rem;
-    margin-left: 3rem;
+    /* width: 50rem; */
+    width: 100%;
+    height: 100%;
+    margin-left: 0.5rem;
     border: none;
     outline: none;
+    padding-left: 3rem;
+    border-radius: 89px;
+    border: 1px solid #e3e3e3;
     color: var(--grey-500);
     font-size: 1.6rem;
   }
   button {
+    position: absolute;
+    right: 0;
     width: 17rem;
     height: 6rem;
     border-radius: 80px;
@@ -67,6 +76,9 @@ const Form = styled.form`
 `;
 
 const ErrorText = styled.p`
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   color: #b91c1c;
   font-size: 1.2rem;
   background: #fee2e2;
@@ -76,15 +88,31 @@ const ErrorText = styled.p`
 function NewsLetter() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
     if (!email) {
+      setIsLoading(false);
       setError(true);
-      return;
     } else {
-      setError(false);
-      setEmail("");
+      setTimeout(() => {
+        setError(false);
+        setIsLoading(false);
+        setEmail("");
+      }, 1000);
     }
+    // setTimeout(() => {
+    //   setIsLoading(true);
+    //   if (!email) {
+    //     setError(true);
+    //     return;
+    //   } else {
+    //     setError(false);
+    //     setIsLoading(false);
+    //     setEmail("");
+    //   }
+    // }, 2000);
   }
   return (
     <StyledNewsLetterSection>
@@ -99,17 +127,23 @@ function NewsLetter() {
           </NewsLetterText>
           {error && (
             <ErrorText>
-              You have provide an email address in order to subscribe
+              <MdError />{" "}
+              <span>
+                You have to provide an email address in order to subscribe{" "}
+              </span>
             </ErrorText>
           )}
           <Form onSubmit={handleSubmit}>
             <input
+              disabled={isLoading}
               value={email}
               type="email"
               placeholder="Your email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <button>Subscribe</button>
+            <button disabled={isLoading}>
+              {isLoading ? "Subscribing..." : "Subscribe"}
+            </button>
           </Form>
         </StyledNewsLetter>
       </Container>

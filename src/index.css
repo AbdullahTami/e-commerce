@@ -27,6 +27,13 @@ GREY COLOR:  #171717  #374151  #8c8c8c
   --grey-600: #374151;
   --grey-500: #626262;
   --grey-400: #8c8c8c;
+  --grey-200: #e5e7eb;
+  --grey-300: #6b7280;
+
+  --border-radius-tiny: 3px;
+  --border-radius-sm: 5px;
+  --border-radius-md: 7px;
+  --border-radius-lg: 9px;
 }
 
 *,
@@ -60,6 +67,12 @@ button {
 
 *:disabled {
   cursor: not-allowed;
+}
+
+select:disabled,
+input:disabled {
+  background-color: var(--grey-200);
+  color: var(--grey-300);
 }
 
 /* select:disabled,
