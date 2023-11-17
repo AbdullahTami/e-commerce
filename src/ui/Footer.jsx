@@ -25,6 +25,10 @@ const StyledFooter = styled.div`
       color: var(--main-color);
     }
   }
+  .address {
+    line-height: 1.6;
+  }
+
   /* address {
     display: flex;
     flex-direction: column;
@@ -105,7 +109,7 @@ function Footer() {
                 );
               })}
             </ul>
-            <p>
+            <p className="address">
               Copyright &copy;{new Date().getFullYear()} by Shopper, Inc. All
               rights reserved.
             </p>

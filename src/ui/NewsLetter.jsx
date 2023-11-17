@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Container from "./Container";
 import { useState } from "react";
 import { MdError } from "react-icons/md";
+import toast from "react-hot-toast";
 
 const StyledNewsLetterSection = styled.section`
   padding: 0 3.2rem 4.8rem;
@@ -84,7 +85,7 @@ const Form = styled.form`
   }
 `;
 
-const ErrorText = styled.p`
+const ErrorText = styled.div`
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -108,6 +109,7 @@ function NewsLetter() {
       setTimeout(() => {
         setError(false);
         setIsLoading(false);
+        toast.success("You have successfully subscribed to our newsletter!");
         setEmail("");
       }, 1000);
     }
