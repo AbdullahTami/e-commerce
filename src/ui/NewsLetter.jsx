@@ -71,6 +71,11 @@ const Form = styled.form`
       background: white;
       color: black;
       border: solid black 1px;
+      &:hover:disabled {
+        background-color: var(--grey-200);
+        color: var(--grey-300);
+        border: none;
+      }
     }
   }
 `;
