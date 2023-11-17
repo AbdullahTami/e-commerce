@@ -14,9 +14,16 @@ const StyledFilter = styled.div`
 const FilterButton = styled.button`
   background-color: white;
   border: none;
-
+  /* 
   ${(props) =>
     props.$active === "active" &&
+    css`
+      background-color: var(--main-color);
+      color: white;
+    `} */
+
+  ${(props) =>
+    props.active &&
     css`
       background-color: var(--main-color);
       color: white;
@@ -41,16 +48,40 @@ const FilterButton = styled.button`
 
 function Filter() {
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const currentFilter = searchParams.get("category") || "all";
+  console.log(currentFilter);
+
   function handleClick(value) {
     searchParams.set("category", value);
     setSearchParams(searchParams);
   }
   return (
     <StyledFilter>
-      <FilterButton onClick={() => handleClick("all")}>All</FilterButton>
-      <FilterButton onClick={() => handleClick("men")}>Men</FilterButton>
-      <FilterButton onClick={() => handleClick("women")}>Women</FilterButton>
-      <FilterButton onClick={() => handleClick("kids")}>Kids</FilterButton>
+      <FilterButton
+        active={currentFilter === "all"}
+        onClick={() => handleClick("all")}
+      >
+        All
+      </FilterButton>
+      <FilterButton
+        active={currentFilter === "men"}
+        onClick={() => handleClick("men")}
+      >
+        Men
+      </FilterButton>
+      <FilterButton
+        active={currentFilter === "women"}
+        onClick={() => handleClick("women")}
+      >
+        Women
+      </FilterButton>
+      <FilterButton
+        active={currentFilter === "kids"}
+        onClick={() => handleClick("kids")}
+      >
+        Kids
+      </FilterButton>
     </StyledFilter>
   );
 }
