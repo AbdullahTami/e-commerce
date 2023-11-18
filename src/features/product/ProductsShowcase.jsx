@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { getProducts } from "./productSlice";
 import Item from "../../ui/Item";
 import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 
 const StyledProductSection = styled.section`
   padding: 0 3.2rem 12.8rem;
@@ -22,7 +23,32 @@ const StyledPopularItems = styled.div`
   row-gap: 8.5rem;
   grid-template-columns: repeat(4, 1fr);
 `;
+
+const LoadMore = styled.button`
+  margin-top: 9.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  transition: background-color 0.3s;
+  transition: all 0.3s;
+  border: none;
+  border-radius: 1000px;
+  background: #ededed;
+  font-weight: 500;
+  color: #787878;
+  &:hover {
+    background: var(--grey-200);
+  }
+  &:active {
+    outline: 2px solid var(--grey-200);
+    outline-offset: -1px;
+  }
+`;
+
 function ProductsShowcase() {
+  const [load, setLoad] = useState(true);
   const products = useSelector(getProducts);
   const [searchParams] = useSearchParams();
   //   console.log(products);
@@ -50,13 +76,24 @@ function ProductsShowcase() {
     <StyledProductSection>
       <StyledProductPage>
         <StyledPopularItems>
-          {filteredProducts.map((item) => (
-            <Item key={item.id} item={item} />
-          ))}
+          {load
+            ? filteredProducts
+                .slice(0, 8)
+                .map((item) => <Item key={item.id} item={item} />)
+            : filteredProducts.map((item) => (
+                <Item key={item.id} item={item} />
+              ))}
         </StyledPopularItems>
+        <LoadMore onClick={() => setLoad((load) => !load)}>
+          {load ? "Show more" : "Show less"}
+        </LoadMore>
       </StyledProductPage>
     </StyledProductSection>
   );
 }
 
 export default ProductsShowcase;
+
+// {filteredProducts.map((item) => (
+//   <Item key={item.id} item={item} />
+// ))}

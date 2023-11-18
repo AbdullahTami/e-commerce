@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import Container from "./Container";
 import { allLinks, socialIcons } from "../assets/linksData";
-import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 
 import Logo from "./Logo";
 
