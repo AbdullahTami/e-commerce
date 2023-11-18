@@ -59,24 +59,28 @@ function Filter() {
   return (
     <StyledFilter>
       <FilterButton
+        disabled={currentFilter === "all"}
         active={currentFilter === "all"}
         onClick={() => handleClick("all")}
       >
         All
       </FilterButton>
       <FilterButton
+        disabled={currentFilter === "men"}
         active={currentFilter === "men"}
         onClick={() => handleClick("men")}
       >
         Men
       </FilterButton>
       <FilterButton
+        disabled={currentFilter === "women"}
         active={currentFilter === "women"}
         onClick={() => handleClick("women")}
       >
         Women
       </FilterButton>
       <FilterButton
+        disabled={currentFilter === "kids"}
         active={currentFilter === "kids"}
         onClick={() => handleClick("kids")}
       >

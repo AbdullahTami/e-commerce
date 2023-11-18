@@ -72,17 +72,24 @@ function ProductsShowcase() {
       (product) => product.category === "kids"
     );
 
+  const sortBy = searchParams.get("sortBy") || "regularPrice-asc";
+
+  const [field, direction] = sortBy.split("-");
+  // console.log(field, direction);
+  // const modifier = direction === "asc" ? 1 : -1;
+  const sortedProducts = filteredProducts
+    .slice()
+    .sort((a, b) => a[field] - b[field]);
+
   return (
     <StyledProductSection>
       <StyledProductPage>
         <StyledPopularItems>
           {load
-            ? filteredProducts
+            ? sortedProducts
                 .slice(0, 8)
                 .map((item) => <Item key={item.id} item={item} />)
-            : filteredProducts.map((item) => (
-                <Item key={item.id} item={item} />
-              ))}
+            : sortedProducts.map((item) => <Item key={item.id} item={item} />)}
         </StyledPopularItems>
         <LoadMore onClick={() => setLoad((load) => !load)}>
           {load ? "Show more" : "Show less"}

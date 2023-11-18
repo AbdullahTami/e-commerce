@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Filter from "../../ui/Filter";
+import SortBy from "../../ui/SortBy";
 // import Container from "../../ui/Container";
 
 const ProductOperationsSection = styled.section`
@@ -20,13 +21,23 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
+const SortByFilterWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+`;
+
 function ProductOperations() {
   return (
     <ProductOperationsSection>
       <Wrapper>
         <StyledOperations>
           <p>Categories</p>
-          <Filter />
+          <SortByFilterWrapper>
+            <Filter />
+            <SortBy />
+          </SortByFilterWrapper>
         </StyledOperations>
       </Wrapper>
     </ProductOperationsSection>
