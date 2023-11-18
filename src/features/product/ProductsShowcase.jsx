@@ -76,10 +76,10 @@ function ProductsShowcase() {
 
   const [field, direction] = sortBy.split("-");
   // console.log(field, direction);
-  // const modifier = direction === "asc" ? 1 : -1;
+  const modifier = direction === "asc" ? 1 : -1;
   const sortedProducts = filteredProducts
     .slice()
-    .sort((a, b) => a[field] - b[field]);
+    .sort((a, b) => (a[field] - b[field]) * modifier);
 
   return (
     <StyledProductSection>
