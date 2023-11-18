@@ -18,17 +18,15 @@ const StyledSelect = styled.select`
 function Select({ onChange, value }) {
   return (
     <StyledSelect value={value} onChange={onChange}>
-      <option value={"old_price-asc"}>
-        Sort by regular price (low to high)
-      </option>
+      <option value={"old_price-asc"}>Sort by regular price (low first)</option>
       <option value={"old_price-desc"}>
-        Sort by regular price (high to to low)
+        Sort by regular price (high first)
       </option>
       <option value={"new_price-asc"}>
-        Sort by discount price (low to to high)
+        Sort by discount price (low first)
       </option>
       <option value={"new_price-desc"}>
-        Sort by discount price (high to to low)
+        Sort by discount price (high first)
       </option>
     </StyledSelect>
   );
