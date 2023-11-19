@@ -5,6 +5,7 @@ import Cart from "./features/cart/Cart";
 import PageNotFound from "./ui/PageNotFound";
 import HomePage from "./pages/HomePage";
 import { Toaster } from "react-hot-toast";
+import SingleProductPage from "./pages/SingleProductPage";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Route index element={<Navigate replace to="home" />} />
           <Route path="home" element={<HomePage />} />
           <Route path="product" element={<Product />} />
-          <Route path="product/:productId" element={<div>Yoo whaat!</div>} />
+          <Route path="product/:productId" element={<SingleProductPage />} />
           <Route path="cart" element={<Cart />} />
           <Route path="auth" element={<div>Authentication</div>} />
           <Route path="about" element={<div>about</div>} />
@@ -37,8 +38,6 @@ function App() {
             fontSize: "16px",
             maxWidth: "500px",
             padding: "16px 24px",
-            // backgroundColor: '',
-            // color: '',
           },
         }}
       />

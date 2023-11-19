@@ -43,6 +43,8 @@ let all_product = [
     image: p2_img,
     new_price: 85.0,
     old_price: 120.5,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 27,
@@ -51,6 +53,8 @@ let all_product = [
     image: p27_img,
     new_price: 45.5,
     old_price: 95.5,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 28,
@@ -59,6 +63,8 @@ let all_product = [
     image: p28_img,
     new_price: 50.0,
     old_price: 80.0,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 3,
@@ -67,6 +73,8 @@ let all_product = [
     image: p3_img,
     new_price: 60.0,
     old_price: 100.5,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 4,
@@ -75,6 +83,8 @@ let all_product = [
     image: p4_img,
     new_price: 100.0,
     old_price: 150.0,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 5,
@@ -83,6 +93,8 @@ let all_product = [
     image: p5_img,
     new_price: 100.0,
     old_price: 160.5,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 18,
@@ -91,6 +103,8 @@ let all_product = [
     image: p18_img,
     new_price: 95.5,
     old_price: 120.5,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 7,
@@ -99,6 +113,8 @@ let all_product = [
     image: p7_img,
     new_price: 70.0,
     old_price: 100.0,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 8,
@@ -107,6 +123,8 @@ let all_product = [
     image: p8_img,
     new_price: 40.0,
     old_price: 80.0,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 9,
@@ -115,6 +133,8 @@ let all_product = [
     image: p9_img,
     new_price: 60.0,
     old_price: 90.5,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 10,
@@ -123,6 +143,8 @@ let all_product = [
     image: p10_img,
     new_price: 90.0,
     old_price: 120.5,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 13,
@@ -131,6 +153,8 @@ let all_product = [
     image: p13_img,
     new_price: 50.0,
     old_price: 80.0,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 31,
@@ -139,6 +163,8 @@ let all_product = [
     image: p31_img,
     new_price: 90.0,
     old_price: 110.0,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 32,
@@ -147,6 +173,8 @@ let all_product = [
     image: p32_img,
     new_price: 60.0,
     old_price: 80.5,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 14,
@@ -155,6 +183,8 @@ let all_product = [
     image: p14_img,
     new_price: 50.0,
     old_price: 80.0,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 15,
@@ -163,6 +193,8 @@ let all_product = [
     image: p15_img,
     new_price: 40.0,
     old_price: 60.0,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 1,
@@ -171,6 +203,8 @@ let all_product = [
     image: p1_img,
     new_price: 50.0,
     old_price: 80.5,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 19,
@@ -179,6 +213,8 @@ let all_product = [
     image: p19_img,
     new_price: 70.5,
     old_price: 90.5,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 20,
@@ -187,6 +223,8 @@ let all_product = [
     image: p20_img,
     new_price: 85.0,
     old_price: 120.5,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 34,
@@ -195,6 +233,8 @@ let all_product = [
     image: p34_img,
     new_price: 75.5,
     old_price: 115.5,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 35,
@@ -203,6 +243,8 @@ let all_product = [
     image: p35_img,
     new_price: 50.0,
     old_price: 70.5,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 21,
@@ -211,6 +253,8 @@ let all_product = [
     image: p21_img,
     new_price: 80.0,
     old_price: 110.0,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 23,
@@ -219,6 +263,8 @@ let all_product = [
     image: p23_img,
     new_price: 60.0,
     old_price: 100.5,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 24,
@@ -227,6 +273,8 @@ let all_product = [
     image: p24_img,
     new_price: 45.0,
     old_price: 65.5,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 25,
@@ -235,6 +283,8 @@ let all_product = [
     image: p25_img,
     new_price: 70.0,
     old_price: 90.0,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 22,
@@ -243,6 +293,8 @@ let all_product = [
     image: p22_img,
     new_price: 85.5,
     old_price: 120.5,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 11,
@@ -251,6 +303,8 @@ let all_product = [
     image: p11_img,
     new_price: 80.0,
     old_price: 100.0,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 26,
@@ -259,6 +313,8 @@ let all_product = [
     image: p26_img,
     new_price: 80.0,
     old_price: 110.5,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 6,
@@ -267,6 +323,8 @@ let all_product = [
     image: p6_img,
     new_price: 40.0,
     old_price: 60.5,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 29,
@@ -275,6 +333,8 @@ let all_product = [
     image: p29_img,
     new_price: 95.0,
     old_price: 140.5,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 12,
@@ -283,6 +343,8 @@ let all_product = [
     image: p12_img,
     new_price: 90.0,
     old_price: 135.5,
+    descrption:
+      "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
   },
   {
     id: 30,
@@ -291,6 +353,8 @@ let all_product = [
     image: p30_img,
     new_price: 60.0,
     old_price: 80.0,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 33,
@@ -299,6 +363,8 @@ let all_product = [
     image: p33_img,
     new_price: 100.0,
     old_price: 160.0,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 16,
@@ -307,6 +373,8 @@ let all_product = [
     image: p16_img,
     new_price: 50.0,
     old_price: 75.5,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
   {
     id: 36,
@@ -315,6 +383,8 @@ let all_product = [
     image: p36_img,
     new_price: 90.0,
     old_price: 110.0,
+    description:
+      "A one-piece garment that covers both the upper and lower body, typically worn as protective clothing or for warmth.",
   },
   {
     id: 17,
@@ -323,6 +393,8 @@ let all_product = [
     image: p17_img,
     new_price: 80.0,
     old_price: 115.5,
+    description:
+      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round necktie and short sleeves, worn as an undershirt or outer garment.",
   },
 ];
 export default all_product;
