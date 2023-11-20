@@ -37,7 +37,6 @@ const Prices = styled.div`
     color: #fa6388;
   }
 `;
-// onClick={() => window.scrollTo(0, 0)}
 
 function Item({ item }) {
   const {
@@ -47,6 +46,7 @@ function Item({ item }) {
     new_price: newPrice,
     old_price: oldPrice,
   } = item;
+
   return (
     <StyledProduct>
       <Link to={`/product/${productId}`} onClick={() => window.scrollTo(0, 0)}>

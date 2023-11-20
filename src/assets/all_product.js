@@ -43,7 +43,7 @@ let all_product = [
     image: p2_img,
     new_price: 85.0,
     old_price: 120.5,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 4,
   },
@@ -76,7 +76,7 @@ let all_product = [
     image: p3_img,
     new_price: 60.0,
     old_price: 100.5,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 4,
   },
@@ -87,7 +87,7 @@ let all_product = [
     image: p4_img,
     new_price: 100.0,
     old_price: 150.0,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 4,
   },
@@ -98,7 +98,7 @@ let all_product = [
     image: p5_img,
     new_price: 100.0,
     old_price: 160.5,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 3,
   },
@@ -120,7 +120,7 @@ let all_product = [
     image: p7_img,
     new_price: 70.0,
     old_price: 100.0,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 3,
   },
@@ -131,7 +131,7 @@ let all_product = [
     image: p8_img,
     new_price: 40.0,
     old_price: 80.0,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 3,
   },
@@ -142,7 +142,7 @@ let all_product = [
     image: p9_img,
     new_price: 60.0,
     old_price: 90.5,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 3,
   },
@@ -153,7 +153,7 @@ let all_product = [
     image: p10_img,
     new_price: 90.0,
     old_price: 120.5,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 5,
   },
@@ -219,7 +219,7 @@ let all_product = [
     image: p1_img,
     new_price: 50.0,
     old_price: 80.5,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 5,
   },
@@ -329,7 +329,7 @@ let all_product = [
     image: p11_img,
     new_price: 80.0,
     old_price: 100.0,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 5,
   },
@@ -351,7 +351,7 @@ let all_product = [
     image: p6_img,
     new_price: 40.0,
     old_price: 60.5,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 2,
   },
@@ -373,7 +373,7 @@ let all_product = [
     image: p12_img,
     new_price: 90.0,
     old_price: 135.5,
-    descrption:
+    description:
       "A line of chunky blanket stitching defines the sleeves of this sweater knit with hearty ribbing from plush yarns in a recycled-polyester blend.",
     productRating: 2,
   },
