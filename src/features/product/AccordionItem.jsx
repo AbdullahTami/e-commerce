@@ -12,7 +12,7 @@ const StyledAccordionItem = styled.div`
   column-gap: 2.4rem;
   row-gap: 2rem;
   align-items: center;
-  transition: all 0.3s;
+  transition: all 0.6s;
   ${(props) =>
     props.isOpen &&
     css`
