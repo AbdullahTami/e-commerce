@@ -37,6 +37,7 @@ const Prices = styled.div`
     color: #fa6388;
   }
 `;
+// onClick={() => window.scrollTo(0, 0)}
 
 function Item({ item }) {
   const {

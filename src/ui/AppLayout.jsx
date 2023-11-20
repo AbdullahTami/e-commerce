@@ -1,4 +1,5 @@
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
+
 // import CartOverview from "../features/cart/CartOverview";
 import Header from "./Header";
 import styled from "styled-components";
@@ -16,6 +17,8 @@ const Main = styled.main`
 `;
 
 function AppLayout() {
+  // const location = useLocation();
+  // console.log(location);
   return (
     <StyledAppLayout>
       <Header />

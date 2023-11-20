@@ -14,7 +14,7 @@ const StyledAccordionItem = styled.div`
   align-items: center;
   transition: all 0.6s;
   ${(props) =>
-    props.isOpen &&
+    props.$isOpen &&
     css`
       transform: translate(2%);
     `}
@@ -24,7 +24,7 @@ const Title = styled.p`
   font-size: 2.4rem;
   font-weight: 500;
   ${(props) =>
-    props.isOpen &&
+    props.$isOpen &&
     css`
       color: var(--main-color);
     `}
@@ -47,10 +47,10 @@ function AccordionItem({ num, title, curOpen, onOpen, children }) {
   const isOpen = num === curOpen;
   return (
     <StyledAccordionItem
-      isOpen={isOpen}
+      $isOpen={isOpen}
       onClick={() => onOpen(isOpen ? null : num)}
     >
-      <Title isOpen={isOpen}>{title}</Title>
+      <Title $isOpen={isOpen}>{title}</Title>
       <Icon>{isOpen ? <FaChevronDown /> : <FaChevronUp />}</Icon>
       {isOpen && <ContentBox>{children}</ContentBox>}
     </StyledAccordionItem>

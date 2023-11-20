@@ -54,6 +54,11 @@ body {
   color: var(--grey-700);
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 input,
 button,
 textarea,

@@ -23,7 +23,7 @@ const FilterButton = styled.button`
     `} */
 
   ${(props) =>
-    props.active &&
+    props.$active &&
     css`
       background-color: var(--main-color);
       color: white;
@@ -60,28 +60,28 @@ function Filter() {
     <StyledFilter>
       <FilterButton
         disabled={currentFilter === "all"}
-        active={currentFilter === "all"}
+        $active={currentFilter === "all"}
         onClick={() => handleClick("all")}
       >
         All
       </FilterButton>
       <FilterButton
         disabled={currentFilter === "men"}
-        active={currentFilter === "men"}
+        $active={currentFilter === "men"}
         onClick={() => handleClick("men")}
       >
         Men
       </FilterButton>
       <FilterButton
         disabled={currentFilter === "women"}
-        active={currentFilter === "women"}
+        $active={currentFilter === "women"}
         onClick={() => handleClick("women")}
       >
         Women
       </FilterButton>
       <FilterButton
         disabled={currentFilter === "kids"}
-        active={currentFilter === "kids"}
+        $active={currentFilter === "kids"}
         onClick={() => handleClick("kids")}
       >
         Kids
