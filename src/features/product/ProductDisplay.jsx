@@ -40,7 +40,7 @@ const ProductDetails = styled.div`
     transition: all 0.3s;
     padding: 2rem 3.2rem;
     width: 20rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: white;
     background: #ff4141;

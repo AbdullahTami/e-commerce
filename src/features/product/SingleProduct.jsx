@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import Container from "../../ui/Container";
 import Breadcrumbs from "./ProductBreadcrumbs";
 import ProductDisplay from "./ProductDisplay";
+import ProductDescriptionAccordion from "./ProductDescriptionAccordion";
 
 function SingleProduct() {
   const products = useSelector(getProducts);
@@ -14,6 +15,7 @@ function SingleProduct() {
     <Container>
       <Breadcrumbs product={product} />
       <ProductDisplay product={product} />
+      <ProductDescriptionAccordion />
     </Container>
   );
 }

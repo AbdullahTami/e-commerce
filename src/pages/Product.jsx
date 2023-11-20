@@ -2,7 +2,8 @@
 import styled from "styled-components";
 import ProductOperations from "../features/product/ProductOperations";
 import ProductsShowcase from "../features/product/ProductsShowcase";
-import Container from "../ui/Container";
+// import Container from "../ui/Container";
+// import ProductDescriptionBox from "../features/product/ProductDescriptionBox";
 
 const StyledProductPage = styled.div`
   display: flex;

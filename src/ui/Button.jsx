@@ -6,7 +6,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
   padding: 1.6rem 3.2rem;
   transition: background-color 0.3s;
   transition: all 0.3s;
