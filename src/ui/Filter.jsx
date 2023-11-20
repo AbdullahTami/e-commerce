@@ -50,7 +50,6 @@ function Filter() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const currentFilter = searchParams.get("category") || "all";
-  console.log(currentFilter);
 
   function handleClick(value) {
     searchParams.set("category", value);

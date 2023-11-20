@@ -11,7 +11,6 @@ function SingleProduct() {
   const products = useSelector(getProducts);
   const { productId } = useParams();
   const product = products.find((item) => item.id === Number(productId));
-  console.log(product);
   return (
     <Container>
       <Breadcrumbs product={product} />

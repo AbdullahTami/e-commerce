@@ -49,7 +49,7 @@ function Item({ item }) {
   } = item;
   return (
     <StyledProduct>
-      <Link to={`/product/${productId}`}>
+      <Link to={`/product/${productId}`} onClick={() => window.scrollTo(0, 0)}>
         <figure>
           <img src={image} alt="product-picture" />
         </figure>
