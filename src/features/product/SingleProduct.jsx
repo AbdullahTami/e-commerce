@@ -5,6 +5,7 @@ import Container from "../../ui/Container";
 import Breadcrumbs from "./ProductBreadcrumbs";
 import ProductDisplay from "./ProductDisplay";
 import ProductDescriptionAccordion from "./ProductDescriptionAccordion";
+import RelatedProducts from "./RelatedProducts";
 
 function SingleProduct() {
   const products = useSelector(getProducts);
@@ -16,6 +17,7 @@ function SingleProduct() {
       <Breadcrumbs product={product} />
       <ProductDisplay product={product} />
       <ProductDescriptionAccordion />
+      <RelatedProducts product={product} />
     </Container>
   );
 }
