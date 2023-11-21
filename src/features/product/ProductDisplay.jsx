@@ -91,6 +91,7 @@ const Prices = styled.div`
 
 function ProductDisplay({ product }) {
   const {
+    id: productId,
     image,
     name,
     category,

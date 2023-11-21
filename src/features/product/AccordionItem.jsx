@@ -33,7 +33,7 @@ const Title = styled.p`
 const StyledIcon = styled(FaChevronUp)`
   height: 2.4rem;
   width: 2.4rem;
-  transition: all 0.3s;
+  transition: all 0.5s;
   ${(props) =>
     props.$isOpen &&
     css`

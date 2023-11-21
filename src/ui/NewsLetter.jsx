@@ -57,6 +57,11 @@ const Form = styled.form`
     border: 1px solid #e3e3e3;
     color: var(--grey-500);
     font-size: 1.6rem;
+
+    &:focus {
+      /* border: 1px solid black; */
+      outline: 2px solid var(--grey-200);
+    }
   }
   button {
     position: absolute;
