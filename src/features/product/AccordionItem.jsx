@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaChevronUp } from "react-icons/fa";
 
 const StyledAccordionItem = styled.div`
   box-shadow: var(--shadow-sm);
@@ -30,11 +30,15 @@ const Title = styled.p`
     `}
 `;
 
-const Icon = styled.span`
-  & svg {
-    height: 2.4rem;
-    width: 2.4rem;
-  }
+const StyledIcon = styled(FaChevronUp)`
+  height: 2.4rem;
+  width: 2.4rem;
+  transition: all 0.3s;
+  ${(props) =>
+    props.$isOpen &&
+    css`
+      rotate: 180deg;
+    `}
 `;
 
 const ContentBox = styled.div`
@@ -51,7 +55,7 @@ function AccordionItem({ num, title, curOpen, onOpen, children }) {
       onClick={() => onOpen(isOpen ? null : num)}
     >
       <Title $isOpen={isOpen}>{title}</Title>
-      <Icon>{isOpen ? <FaChevronDown /> : <FaChevronUp />}</Icon>
+      <StyledIcon $isOpen={isOpen} />
       {isOpen && <ContentBox>{children}</ContentBox>}
     </StyledAccordionItem>
   );
