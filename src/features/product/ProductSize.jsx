@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { selectProductSize } from "../cart/cartSlice";
 
 const StyledProductSize = styled.div`
   display: flex;
@@ -28,14 +30,20 @@ const SizeButton = styled.button`
   font-weight: 500;
 `;
 
-function ProductSize({ sizes }) {
+function ProductSize({ sizes, productId }) {
+  const dispatch = useDispatch();
   //   console.log(sizes);
   return (
     <StyledProductSize>
       <p>select size</p>
       <Sizes>
         {sizes.map((size, index) => (
-          <SizeButton key={index}>{size.label}</SizeButton>
+          <SizeButton
+            onClick={() => dispatch(selectProductSize(productId, size.value))}
+            key={index}
+          >
+            {size.label}
+          </SizeButton>
         ))}
       </Sizes>
     </StyledProductSize>

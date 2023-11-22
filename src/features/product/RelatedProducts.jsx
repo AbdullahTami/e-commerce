@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import styled from "styled-components";
 import Container from "../../ui/Container";
-import Item from "../../ui/Item";
+import ProductItem from "./ProductItem";
 import { getProducts } from "./productSlice";
 import { useSelector } from "react-redux";
 
@@ -59,7 +59,7 @@ function RelatedProducts({ product }) {
           <h1>#RelatedProducts</h1>
           <Slider {...settings}>
             {relatedProducts.map((item) => (
-              <Item key={item.id} item={item} />
+              <ProductItem key={item.id} item={item} />
             ))}
           </Slider>
         </StyledRelatedProducts>

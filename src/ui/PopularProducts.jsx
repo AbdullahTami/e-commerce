@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Container from "./Container";
 import popular_products from "../assets/data";
-import Item from "./Item";
+import ProductItem from "../features/product/ProductItem";
 
 const StyledPopularSection = styled.section`
   padding: 12.8rem 3.2rem;
@@ -38,7 +38,7 @@ function PopularProducts() {
           <h1>#PopularInWomen</h1>
           <StyledPopularItems>
             {popular_products.map((item) => (
-              <Item key={item.id} item={item} />
+              <ProductItem key={item.id} item={item} />
             ))}
           </StyledPopularItems>
         </StyledPopular>

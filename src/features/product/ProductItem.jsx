@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { formatCurrency } from "../utils/helpers";
+import { formatCurrency } from "../../utils/helpers";
 import { Link } from "react-router-dom";
 
 const StyledProduct = styled.div`
@@ -38,7 +38,7 @@ const Prices = styled.div`
   }
 `;
 
-function Item({ item }) {
+function ProductItem({ item }) {
   const {
     id: productId,
     name,
@@ -63,4 +63,4 @@ function Item({ item }) {
   );
 }
 
-export default Item;
+export default ProductItem;

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { getProducts } from "./productSlice";
-import Item from "../../ui/Item";
+import ProductItem from "./ProductItem";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 
@@ -88,8 +88,10 @@ function ProductsShowcase() {
           {load
             ? sortedProducts
                 .slice(0, 8)
-                .map((item) => <Item key={item.id} item={item} />)
-            : sortedProducts.map((item) => <Item key={item.id} item={item} />)}
+                .map((item) => <ProductItem key={item.id} item={item} />)
+            : sortedProducts.map((item) => (
+                <ProductItem key={item.id} item={item} />
+              ))}
         </StyledPopularItems>
         <LoadMore onClick={() => setLoad((load) => !load)}>
           {load ? "Show more" : "Show less"}

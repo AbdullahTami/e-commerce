@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import Container from "./Container";
 import new_collection from "../assets/new_collections";
-import Item from "./Item";
+import ProductItem from "../features/product/ProductItem";
 
 const NewCollectionSection = styled.section`
   padding: 0 3.2rem 12.8rem;
@@ -64,7 +64,7 @@ function NewCollections() {
           <h1>#NewCollections</h1>
           <Slider {...settings}>
             {new_collection.map((item) => (
-              <Item key={item.id} item={item} />
+              <ProductItem key={item.id} item={item} />
             ))}
           </Slider>
         </StyledNewCollection>

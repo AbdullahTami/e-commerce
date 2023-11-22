@@ -42,7 +42,7 @@ const cartSlice = createSlice({
         const product = state.cart.find(
           (item) => item.productId === action.payload.productId
         );
-        product.size = action.payload.value;
+        product.size = action.payload.sizeOption;
       },
     },
     increaseProductQuantity(state, action) {
@@ -66,7 +66,6 @@ const cartSlice = createSlice({
     },
   },
 });
-
 export const {
   addProduct,
   deleteProduct,
@@ -77,3 +76,7 @@ export const {
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
+
+// export const getSizeById = (id) => (store) =>
+//   store.cart.cart.find((item) => item.productId === id)?.size;
+// console.log(getSizeById(27));

@@ -2,6 +2,8 @@ import styled from "styled-components";
 import ProductRating from "./ProductRating";
 import { formatCurrency } from "../../utils/helpers";
 import ProductSize from "./ProductSize";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../cart/cartSlice";
 
 const StyledProductDisplaySection = styled.section`
   padding: 4.8rem 3.2rem;
@@ -90,6 +92,7 @@ const Prices = styled.div`
 `;
 
 function ProductDisplay({ product }) {
+  const dispatch = useDispatch();
   const {
     id: productId,
     image,
@@ -100,6 +103,21 @@ function ProductDisplay({ product }) {
     new_price: newPrice,
     old_price: oldPrice,
   } = product;
+
+  function handleAddToCart() {
+    const newItem = {
+      image,
+      productId,
+      size: "",
+      category,
+      name,
+      quantity: 1,
+      newPrice,
+      totalPrice: newPrice * 1,
+    };
+    dispatch(addProduct(newItem));
+    console.log(newItem);
+  }
   return (
     <StyledProductDisplaySection>
       <StyledProductDisplay>
@@ -113,6 +131,7 @@ function ProductDisplay({ product }) {
           </Prices>
           <div className="product-description">{description}</div>
           <ProductSize
+            productId={productId}
             sizes={[
               { label: "S", value: "S" },
               { label: "M", value: "M" },
@@ -121,7 +140,9 @@ function ProductDisplay({ product }) {
               { label: "XXL", value: "XXL" },
             ]}
           />
-          <button className="button-add-to-cart">Add to cart</button>
+          <button className="button-add-to-cart" onClick={handleAddToCart}>
+            Add to cart
+          </button>
           <div className="footer">
             <p>
               <span>Category: </span>
