@@ -51,10 +51,8 @@ function ProductsShowcase() {
   const [load, setLoad] = useState(true);
   const products = useSelector(getProducts);
   const [searchParams] = useSearchParams();
-  //   console.log(products);
 
   const filterValue = searchParams.get("category") || "all";
-  //   console.log(filterValue);
 
   let filteredProducts;
   if (filterValue === "all") filteredProducts = products;
@@ -75,7 +73,6 @@ function ProductsShowcase() {
   const sortBy = searchParams.get("sortBy") || "regularPrice-asc";
 
   const [field, direction] = sortBy.split("-");
-  // console.log(field, direction);
   const modifier = direction === "asc" ? 1 : -1;
   const sortedProducts = filteredProducts
     .slice()
@@ -99,7 +96,3 @@ function ProductsShowcase() {
 }
 
 export default ProductsShowcase;
-
-// {filteredProducts.map((item) => (
-//   <Item key={item.id} item={item} />
-// ))}
