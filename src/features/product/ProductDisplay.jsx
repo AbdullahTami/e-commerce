@@ -1,10 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import ProductRating from "./ProductRating";
 import { formatCurrency } from "../../utils/helpers";
 import ProductSize from "./ProductSize";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, getProduct } from "../cart/cartSlice";
 import UpdateProductQuantity from "../cart/UpdateProductQuantity";
+import Button from "./ProductButton";
+import CartModal from "../cart/CartModal";
 
 const StyledProductDisplaySection = styled.section`
   padding: 4.8rem 3.2rem;
@@ -130,9 +132,7 @@ function ProductDisplay({ product }) {
           </Prices>
           <div className="product-description">{description}</div>
           {!isProductInCart ? (
-            <button className="button-add-to-cart" onClick={handleAddToCart}>
-              Add to cart
-            </button>
+            <Button onClick={handleAddToCart}>Add to cart</Button>
           ) : (
             <>
               <UpdateProductQuantity productId={productId} />
@@ -146,6 +146,7 @@ function ProductDisplay({ product }) {
                   { label: "XXL", value: "XXL" },
                 ]}
               />
+              <CartModal />
             </>
           )}
 

@@ -22,13 +22,12 @@ const StyledProduct = styled.div`
 `;
 
 const Prices = styled.div`
+  margin-top: auto;
   font-size: 2.4rem;
   /* #fa6388 */
   display: flex;
   gap: 4rem;
-  /* justify-content: space-between; */
-  /* background: red; */
-  /* justify-content: space-between; */
+
   .old {
     text-decoration: line-through;
     color: var(--grey-400);

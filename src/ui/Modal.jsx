@@ -9,11 +9,11 @@ const StyledModal = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--color-grey-0);
+  background-color: white;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
   padding: 3.2rem 4rem;
-  transition: all 0.5s;
+  transition: all 0.3;
 `;
 
 const Overlay = styled.div`
@@ -22,9 +22,10 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   z-index: 1000;
+  transition: all 0.3;
 `;
 
 const Button = styled.button`

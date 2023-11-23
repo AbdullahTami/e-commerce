@@ -9,6 +9,7 @@ import {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+
   font-size: 2rem;
   gap: 1rem;
 `;
