@@ -38,7 +38,6 @@ const Button = styled.button`
   position: absolute;
   top: 1.2rem;
   right: 1.9rem;
-
   &:hover {
     background-color: var(--grey-200);
   }

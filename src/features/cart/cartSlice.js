@@ -20,13 +20,13 @@ const cartSlice = createSlice({
       const item = state.cart.find((item) => item.productId === action.payload);
 
       item.quantity++;
-      item.totalPrice = item.quantity * item.price;
+      item.totalPrice = item.quantity * item.newPrice;
     },
     decreaseItemQuantity(state, action) {
       const item = state.cart.find((item) => item.productId === action.payload);
 
       item.quantity--;
-      item.totalPrice = item.quantity * item.price;
+      item.totalPrice = item.quantity * item.newPrice;
 
       if (item.quantity === 0) cartSlice.caseReducers.deleteItem(state, action);
     },
