@@ -2,8 +2,9 @@ import styled from "styled-components";
 import ProductRating from "./ProductRating";
 import { formatCurrency } from "../../utils/helpers";
 import ProductSize from "./ProductSize";
-import { useDispatch } from "react-redux";
-import { addItem } from "../cart/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, getProduct } from "../cart/cartSlice";
+import UpdateProductQuantity from "../cart/UpdateProductQuantity";
 
 const StyledProductDisplaySection = styled.section`
   padding: 4.8rem 3.2rem;
@@ -17,7 +18,6 @@ const StyledProductDisplay = styled.div`
 
 const Img = styled.img`
   width: 58.6rem;
-  /* height: 700; */
 `;
 
 const ProductDetails = styled.div`
@@ -31,7 +31,6 @@ const ProductDetails = styled.div`
   }
   .product-description {
     font-size: 2rem;
-    /* line-height: 1.5; */
   }
   .button-add-to-cart {
     text-transform: uppercase;
@@ -90,6 +89,7 @@ const Prices = styled.div`
 
 function ProductDisplay({ product }) {
   const dispatch = useDispatch();
+
   const {
     id: productId,
     image,
@@ -100,6 +100,8 @@ function ProductDisplay({ product }) {
     new_price: newPrice,
     old_price: oldPrice,
   } = product;
+
+  const isProductInCart = useSelector(getProduct(productId));
 
   function handleAddToCart() {
     const newItem = {
@@ -113,7 +115,6 @@ function ProductDisplay({ product }) {
       totalPrice: newPrice * 1,
     };
     dispatch(addItem(newItem));
-    console.log(newItem);
   }
 
   return (
@@ -128,23 +129,30 @@ function ProductDisplay({ product }) {
             <div className="new">{formatCurrency(newPrice)}</div>
           </Prices>
           <div className="product-description">{description}</div>
-          <ProductSize
-            productId={productId}
-            sizes={[
-              { label: "S", value: "S" },
-              { label: "M", value: "M" },
-              { label: "L", value: "L" },
-              { label: "XL", value: "XL" },
-              { label: "XXL", value: "XXL" },
-            ]}
-          />
-          <button className="button-add-to-cart" onClick={handleAddToCart}>
-            Add to cart
-          </button>
+          {!isProductInCart ? (
+            <button className="button-add-to-cart" onClick={handleAddToCart}>
+              Add to cart
+            </button>
+          ) : (
+            <>
+              <UpdateProductQuantity productId={productId} />
+              <ProductSize
+                productId={productId}
+                sizes={[
+                  { label: "S", value: "S" },
+                  { label: "M", value: "M" },
+                  { label: "L", value: "L" },
+                  { label: "XL", value: "XL" },
+                  { label: "XXL", value: "XXL" },
+                ]}
+              />
+            </>
+          )}
+
           <div className="footer">
             <p>
               <span>Category: </span>
-              {category}, T-Shirt, Crop Top
+              {category}, T-Shirt, Crop Top{" "}
             </p>
             <p>
               <span>tags: </span>Modern, Latest

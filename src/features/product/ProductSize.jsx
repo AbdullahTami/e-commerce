@@ -1,13 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled, { css } from "styled-components";
 import {
-  clearCart,
   getProduct,
   getProductSizeById,
-  increaseItemQuantity,
   selectItemSize,
 } from "../cart/cartSlice";
-import { useState } from "react";
 
 const StyledProductSize = styled.div`
   display: flex;
@@ -29,7 +26,6 @@ const Sizes = styled.div`
 const SizeButton = styled.button`
   display: flex;
   align-items: center;
-  /* width: 20rem; */
   background: #fbfbfb;
   border: 1px solid #ebebeb;
   font-size: 2rem;
@@ -38,18 +34,14 @@ const SizeButton = styled.button`
   ${(props) =>
     props.$selected &&
     css`
-      /* border: 2px solid black; */
       background: var(--grey-200);
     `}
 `;
 
 function ProductSize({ sizes, productId }) {
-  // const [error, setError] = useState(false);
-  // const [selectedSize, setSelectedSize] = useState("");
   const selectedSize = useSelector(getProductSizeById(productId));
   const product = useSelector(getProduct(productId));
   console.log(product);
-  //   console.log(sizes);
   const dispatch = useDispatch();
 
   return (
@@ -61,7 +53,6 @@ function ProductSize({ sizes, productId }) {
             $selected={selectedSize === size.value}
             disabled={selectedSize === size.value}
             key={index}
-            // onClick={() => setSelectedSize(size.value)}
             onClick={() => dispatch(selectItemSize(productId, size.value))}
           >
             {size.label}
