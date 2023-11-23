@@ -2,81 +2,65 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cart: [],
-  /*
-  cart: [
-    productId,
-    name,
-    size,
-    category,
-    quantity,
-    price,
-    image,
-    totalPrice
-  ]
-
-  */
 };
 
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addProduct(state, action) {
-      // payload = newItem
+    addItem(state, action) {
       state.cart.push(action.payload);
     },
-    deleteProduct(state, action) {
-      // payload = productId
+    deleteItem(state, action) {
       state.cart = state.cart.filter(
         (item) => item.productId !== action.payload
       );
     },
-    selectProductSize: {
-      //  payload = { productId, sizeOption }
-      prepare(productId, sizeOption) {
-        return {
-          payload: { productId, sizeOption },
-        };
-      },
-      reducer(state, action) {
-        const product = state.cart.find(
-          (item) => item.productId === action.payload.productId
-        );
-        product.size = action.payload.sizeOption;
-      },
+    increaseItemQuantity(state, action) {
+      const item = state.cart.find((item) => item.productId === action.payload);
+
+      item.quantity++;
+      item.totalPrice = item.quantity * item.price;
+      //   console.log(item);
     },
-    increaseProductQuantity(state, action) {
-      // payload = productId
-      const product = state.cart.find(
-        (item) => item.productId === action.payload
-      );
-      product.quantity++;
-      product.totalPrice = product.quantity * product.price;
-    },
-    decreaseProductQuantity(state, action) {
-      // payload = productId
-      const product = state.cart.find(
-        (item) => item.productId === action.payload
-      );
-      product.quantity--;
-      product.totalPrice = product.quantity * product.price;
+    decreaseItemQuantity(state, action) {
+      const item = state.cart.find((item) => item.productId === action.payload);
+
+      item.quantity--;
+      item.totalPrice = item.quantity * item.price;
     },
     clearCart(state) {
       state.cart = [];
     },
+    selectItemSize: {
+      prepare(id, optedSize) {
+        return { payload: { id, optedSize } };
+      },
+      reducer(state, action) {
+        const item = state.cart.find(
+          (item) => item.productId === action.payload.id
+        );
+        item.size = action.payload.optedSize;
+      },
+    },
   },
 });
+
 export const {
-  addProduct,
-  deleteProduct,
-  selectProductSize,
-  increaseProductQuantity,
-  decreaseProductQuantity,
+  addItem,
+  deleteItem,
+  increaseItemQuantity,
   clearCart,
+  selectItemSize,
+  decreaseItemQuantity,
 } = cartSlice.actions;
 
-export default cartSlice.reducer;
+export const getCart = (store) => store.cart.cart;
 
-// export const getSizeById = (id) => (store) =>
-//   store.cart.cart.find((item) => item.productId === id)?.size;
-// console.log(getSizeById(27));
+export const getProductSizeById = (id) => (store) =>
+  store.cart.cart.find((item) => item.productId === id)?.size;
+
+export const getProduct = (id) => (store) =>
+  store.cart.cart.find((item) => item.productId === id);
+
+export default cartSlice.reducer;

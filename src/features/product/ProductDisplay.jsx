@@ -3,7 +3,7 @@ import ProductRating from "./ProductRating";
 import { formatCurrency } from "../../utils/helpers";
 import ProductSize from "./ProductSize";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../cart/cartSlice";
+import { addItem } from "../cart/cartSlice";
 
 const StyledProductDisplaySection = styled.section`
   padding: 4.8rem 3.2rem;
@@ -78,15 +78,12 @@ const Prices = styled.div`
   /* #fa6388 */
   display: flex;
   gap: 4rem;
-  /* justify-content: space-between; */
-  /* background: red; */
-  /* justify-content: space-between; */
+
   .old {
     text-decoration: line-through;
     color: var(--grey-400);
   }
   .new {
-    /* color: #ff1414; */
     color: #fa6388;
   }
 `;
@@ -115,9 +112,10 @@ function ProductDisplay({ product }) {
       newPrice,
       totalPrice: newPrice * 1,
     };
-    dispatch(addProduct(newItem));
+    dispatch(addItem(newItem));
     console.log(newItem);
   }
+
   return (
     <StyledProductDisplaySection>
       <StyledProductDisplay>

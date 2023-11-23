@@ -1,6 +1,13 @@
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
-import { selectProductSize } from "../cart/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import styled, { css } from "styled-components";
+import {
+  clearCart,
+  getProduct,
+  getProductSizeById,
+  increaseItemQuantity,
+  selectItemSize,
+} from "../cart/cartSlice";
+import { useState } from "react";
 
 const StyledProductSize = styled.div`
   display: flex;
@@ -28,19 +35,34 @@ const SizeButton = styled.button`
   font-size: 2rem;
   padding: 1.8rem 2.4rem;
   font-weight: 500;
+  ${(props) =>
+    props.$selected &&
+    css`
+      /* border: 2px solid black; */
+      background: var(--grey-200);
+    `}
 `;
 
 function ProductSize({ sizes, productId }) {
-  const dispatch = useDispatch();
+  // const [error, setError] = useState(false);
+  // const [selectedSize, setSelectedSize] = useState("");
+  const selectedSize = useSelector(getProductSizeById(productId));
+  const product = useSelector(getProduct(productId));
+  console.log(product);
   //   console.log(sizes);
+  const dispatch = useDispatch();
+
   return (
     <StyledProductSize>
       <p>select size</p>
       <Sizes>
         {sizes.map((size, index) => (
           <SizeButton
-            onClick={() => dispatch(selectProductSize(productId, size.value))}
+            $selected={selectedSize === size.value}
+            disabled={selectedSize === size.value}
             key={index}
+            // onClick={() => setSelectedSize(size.value)}
+            onClick={() => dispatch(selectItemSize(productId, size.value))}
           >
             {size.label}
           </SizeButton>
