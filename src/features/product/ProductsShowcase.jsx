@@ -81,17 +81,14 @@ function ProductsShowcase() {
     .slice()
     .sort((a, b) => (a[field] - b[field]) * modifier);
 
+  const displayProducts = load ? sortedProducts.slice(0, 8) : sortedProducts;
   return (
     <StyledProductSection>
       <StyledProductPage>
         <StyledPopularItems>
-          {load
-            ? sortedProducts
-                .slice(0, 8)
-                .map((item) => <ProductItem key={item.id} item={item} />)
-            : sortedProducts.map((item) => (
-                <ProductItem key={item.id} item={item} />
-              ))}
+          {displayProducts.map((item) => (
+            <ProductItem item={item} key={item.id} />
+          ))}
         </StyledPopularItems>
         <LoadMore onClick={() => setLoad((load) => !load)}>
           {load ? "Show more" : "Show less"}
