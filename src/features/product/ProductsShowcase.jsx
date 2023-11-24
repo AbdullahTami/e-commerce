@@ -16,10 +16,10 @@ const StyledProductPage = styled.div`
   flex-direction: column;
 `;
 
-const StyledPopularItems = styled.div`
+const StyledProductCollection = styled.div`
   /* padding: 3.2rem; */
   display: grid;
-  column-gap: 2rem;
+  column-gap: 4rem;
   row-gap: 8.5rem;
   grid-template-columns: repeat(4, 1fr);
 `;
@@ -82,11 +82,11 @@ function ProductsShowcase() {
   return (
     <StyledProductSection>
       <StyledProductPage>
-        <StyledPopularItems>
+        <StyledProductCollection>
           {displayProducts.map((item) => (
             <ProductItem item={item} key={item.id} />
           ))}
-        </StyledPopularItems>
+        </StyledProductCollection>
         <LoadMore onClick={() => setLoad((load) => !load)}>
           {load ? "Show more" : "Show less"}
         </LoadMore>

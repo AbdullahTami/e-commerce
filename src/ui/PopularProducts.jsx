@@ -26,7 +26,7 @@ const StyledPopular = styled.div`
 const StyledPopularItems = styled.div`
   padding: 3.2rem;
   display: grid;
-  gap: 2rem;
+  gap: 4rem;
   grid-template-columns: repeat(4, 1fr);
 `;
 
