@@ -1,9 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { BsDashLg } from "react-icons/bs";
 import styled from "styled-components";
 import { getCart, getTotalCartPrice } from "./cartSlice";
 import { formatCurrency } from "../../utils/helpers";
-import { FaRegTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const StyledCartOverview = styled.div`
@@ -14,6 +13,7 @@ const StyledCartOverview = styled.div`
 `;
 
 const Sections = styled.header`
+  text-transform: uppercase;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
   column-gap: 4rem;
@@ -21,11 +21,12 @@ const Sections = styled.header`
   padding-bottom: 2rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #d5d5d5;
+  color: var(--grey-400);
 `;
 
 const ItemShortDisplay = styled(Sections)`
+  color: var(--grey-700);
   padding-top: 1rem;
-
   margin-bottom: 0;
   align-items: center;
   border-bottom: 1px solid #eee;
@@ -70,7 +71,6 @@ const TotalPrice = styled.span`
 function CartOverview({ onCloseModal }) {
   const cart = useSelector(getCart);
   const totalCartPrice = useSelector(getTotalCartPrice);
-  const dispatch = useDispatch();
 
   if (!cart.length) onCloseModal();
 
@@ -79,7 +79,7 @@ function CartOverview({ onCloseModal }) {
       <StyledCartOverview>
         <Sections>
           <div>Product</div>
-          <div>Quantity</div>
+          <div>Qty</div>
           <div>Size</div>
           <div>Price</div>
         </Sections>

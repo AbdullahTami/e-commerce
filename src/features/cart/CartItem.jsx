@@ -11,13 +11,21 @@ const StyledCartItem = styled.div`
   column-gap: 4rem;
   align-items: center;
   border-bottom: 1px solid #eee;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 
   img {
     width: 8rem;
   }
   div:not(:nth-child(2)) {
     text-align: center;
+  }
+  & svg {
+    transition: all 0.3s;
+    color: var(--grey-500);
+    &:hover,
+    &:active {
+      color: black;
+    }
   }
 `;
 
