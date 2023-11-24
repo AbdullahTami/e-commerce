@@ -1,19 +1,24 @@
 import { BsCart2 } from "react-icons/bs";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import {
+  getTotalCartPrice,
+  getTotalQuantityInCart,
+} from "../features/cart/cartSlice";
 
 const StyledNavCartAuth = styled.div`
   display: flex;
   align-items: center;
 
   .login-cart-count {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 2.3rem;
+    height: 2.3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -4rem;
-    margin-left: -4.2rem;
+    margin-top: -5rem;
+    margin-left: -5.1rem;
     font-size: 1.6rem;
     border-radius: 1000px;
     background: red;
@@ -73,6 +78,7 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 function NavCartAuth() {
+  const totalPrice = useSelector(getTotalQuantityInCart);
   return (
     <StyledNavCartAuth>
       <StyledNavLink to="/auth">
@@ -84,7 +90,7 @@ function NavCartAuth() {
           <BsCart2 />
         </span>
       </StyledNavLink>
-      <div className="login-cart-count">0</div>
+      <div className="login-cart-count">{totalPrice}</div>
     </StyledNavCartAuth>
   );
 }

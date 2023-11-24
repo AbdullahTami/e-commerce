@@ -64,6 +64,9 @@ export const getProductSizeById = (id) => (store) =>
 export const getTotalCartPrice = (store) =>
   store.cart.cart.reduce((sum, item) => sum + item.totalPrice, 0);
 
+export const getTotalQuantityInCart = (store) =>
+  store.cart.cart.reduce((sum, item) => sum + item.quantity, 0);
+
 export const getProductQuantityById = (id) => (store) =>
   store.cart.cart.find((item) => item.productId === id).quantity ?? 0;
 

@@ -1,11 +1,12 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
-import Product from "./pages/Product";
+import Products from "./pages/Products";
 import Cart from "./features/cart/Cart";
 import PageNotFound from "./ui/PageNotFound";
 import HomePage from "./pages/HomePage";
 import { Toaster } from "react-hot-toast";
 import SingleProductPage from "./pages/SingleProductPage";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
@@ -14,9 +15,9 @@ function App() {
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="home" />} />
           <Route path="home" element={<HomePage />} />
-          <Route path="product" element={<Product />} />
+          <Route path="product" element={<Products />} />
           <Route path="product/:productId" element={<SingleProductPage />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="cart" element={<CartPage />} />
           <Route path="auth" element={<div>Authentication</div>} />
           <Route path="about" element={<div>about</div>} />
           <Route path="faq" element={<div>faq</div>} />

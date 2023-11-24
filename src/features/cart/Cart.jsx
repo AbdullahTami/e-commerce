@@ -1,15 +1,19 @@
-import { useSelector } from "react-redux";
-import { getCart } from "./cartSlice";
+import styled from "styled-components";
+import CartHeader from "./CartHeader";
+import CartSection from "./CartSection";
+
+const StyledCart = styled.section`
+  padding: 0 0 12.8rem;
+`;
 
 function Cart() {
-  const cart = useSelector(getCart);
-  if (!cart.length) return;
   return (
-    <div>
-      {cart.map((item, index) => (
-        <div key={index}>{index} item</div>
-      ))}
-    </div>
+    <StyledCart>
+      <CartHeader />
+      <main>
+        <CartSection />
+      </main>
+    </StyledCart>
   );
 }
 

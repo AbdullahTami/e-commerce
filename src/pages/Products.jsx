@@ -5,14 +5,14 @@ import ProductsShowcase from "../features/product/ProductsShowcase";
 // import Container from "../ui/Container";
 // import ProductDescriptionBox from "../features/product/ProductDescriptionBox";
 
-const StyledProductPage = styled.div`
+const StyledProductsPage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 `;
 
-function Product() {
+function Products() {
   return (
     <>
       <ProductOperations />
@@ -21,4 +21,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default Products;

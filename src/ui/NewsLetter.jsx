@@ -73,15 +73,13 @@ const Form = styled.form`
     color: white;
     font-size: 1.6rem;
     transition: all 0.3s;
+
     &:hover {
-      background: white;
-      color: black;
-      border: solid black 1px;
-      &:hover:disabled {
-        background-color: var(--grey-200);
-        color: var(--grey-300);
-        border: none;
-      }
+      background: #2c2a2a;
+    }
+    &:active {
+      outline: 2px solid #2c2a2a;
+      outline-offset: -1px;
     }
   }
   button:active {
