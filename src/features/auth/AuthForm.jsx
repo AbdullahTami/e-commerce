@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components";
-// import Container from "../../ui/Container";
-// import Button from "../../ui/Button";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Spinner from "../../ui/Spinner";
+import { useDispatch } from "react-redux";
+import { updateName } from "./authUserSlice";
 
 const StyledAuthFormSection = styled.section`
   min-height: 80vh;
@@ -65,7 +66,12 @@ const InputField = styled.div`
     height: 4rem;
     border: none;
     background: none;
+    border-radius: 0.7rem 0.7rem 0 0;
     outline: none;
+    &:disabled {
+      background-color: var(--grey-200);
+      color: var(--grey-300);
+    }
   }
   label {
     position: absolute;
@@ -89,7 +95,7 @@ const InputField = styled.div`
 
   input:focus ~ label,
   input:active ~ label {
-    top: -0.7rem;
+    top: -0.9rem;
     color: var(--main-color);
   }
 
@@ -105,7 +111,7 @@ const InputField = styled.div`
         width: 100%;
       }
       label {
-        top: -0.7rem;
+        top: -0.9rem;
         color: var(--main-color);
       }
     `}
@@ -135,23 +141,44 @@ const Button = styled.button`
     outline: 2px solid var(--main-color);
     outline-offset: -1px;
   }
+  &:disabled {
+    background: #ff2626;
+  }
 `;
 
 function AuthForm() {
+  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  // const [errors, setErrors] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (!name || !password) return;
+
+    if (
+      password
+        .split("")
+        .map((num) => parseInt(num))
+        .filter((value) => !Number.isNaN(value)).length <= 3
+    ) {
+      toast.error("Provided password must contain at least 3 digits");
+    } else {
+      setIsLoading(true);
+      setTimeout(() => {
+        toast.success(`Welcome back, ${name}`);
+        dispatch(updateName(name));
+      }, 1500);
+    }
   }
   return (
     <StyledAuthFormSection>
       <StyledAuthForm>
         <h1>Login</h1>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <InputField $input={name}>
             <input
+              disabled={isLoading}
               type="name"
               id="name"
               onChange={(e) => setName(e.target.value)}
@@ -162,6 +189,7 @@ function AuthForm() {
           </InputField>
           <InputField $input={password}>
             <input
+              disabled={isLoading}
               type="Password"
               id="Password"
               onChange={(e) => setPassword(e.target.value)}
@@ -171,7 +199,9 @@ function AuthForm() {
             <label htmlFor="password">Password</label>
           </InputField>
           <div className="pass">Forgot Password?</div>
-          <Button onClick={handleSubmit}>LOGIN</Button>
+          <Button disabled={isLoading}>
+            {isLoading ? <Spinner /> : "LOGIN"}
+          </Button>
           <div className="signup-link">
             You don&apos;t have an account? <a href="#">Signup</a>
           </div>
