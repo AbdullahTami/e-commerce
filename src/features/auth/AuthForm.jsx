@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import Spinner from "../../ui/Spinner";
 import { useDispatch } from "react-redux";
 import { updateName } from "./authUserSlice";
+import { useNavigate } from "react-router";
 
 const StyledAuthFormSection = styled.section`
   min-height: 80vh;
@@ -148,6 +149,7 @@ const Button = styled.button`
 
 function AuthForm() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -168,6 +170,7 @@ function AuthForm() {
       setTimeout(() => {
         toast.success(`Welcome back, ${name}`);
         dispatch(updateName(name));
+        navigate("/cart");
       }, 1500);
     }
   }
