@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 // import Container from "../../ui/Container";
 // import Button from "../../ui/Button";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const StyledAuthFormSection = styled.section`
   min-height: 80vh;
@@ -139,6 +140,11 @@ const Button = styled.button`
 function AuthForm() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  // const [errors, setErrors] = useState(null);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
   return (
     <StyledAuthFormSection>
       <StyledAuthForm>
@@ -165,7 +171,7 @@ function AuthForm() {
             <label htmlFor="password">Password</label>
           </InputField>
           <div className="pass">Forgot Password?</div>
-          <Button>LOGIN</Button>
+          <Button onClick={handleSubmit}>LOGIN</Button>
           <div className="signup-link">
             You don&apos;t have an account? <a href="#">Signup</a>
           </div>
