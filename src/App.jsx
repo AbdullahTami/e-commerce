@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import { Toaster } from "react-hot-toast";
 import SingleProductPage from "./pages/SingleProductPage";
 import CartPage from "./pages/CartPage";
+import AuthenticationPage from "./pages/AuthenticationPage";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="product" element={<Products />} />
           <Route path="product/:productId" element={<SingleProductPage />} />
           <Route path="cart" element={<CartPage />} />
-          <Route path="auth" element={<div>Authentication</div>} />
+          <Route path="auth" element={<AuthenticationPage />} />
           <Route path="about" element={<div>about</div>} />
           <Route path="faq" element={<div>faq</div>} />
         </Route>

@@ -82,7 +82,7 @@ function NavCartAuth() {
   return (
     <StyledNavCartAuth>
       <StyledNavLink to="/auth">
-        <button>login</button>
+        <button>sign up</button>
       </StyledNavLink>
 
       <StyledNavLink to="/cart">

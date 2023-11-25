@@ -100,7 +100,9 @@ function CartOverview({ onCloseModal }) {
       <Footer>
         <TotalPrice>Total Price: {formatCurrency(totalCartPrice)}</TotalPrice>
 
-        <StyledLink to="/cart">Open Cart</StyledLink>
+        <StyledLink to="/cart" onClick={() => scrollTo(0, 0)}>
+          Open Cart
+        </StyledLink>
       </Footer>
     </>
   );
