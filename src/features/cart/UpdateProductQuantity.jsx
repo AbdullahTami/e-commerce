@@ -5,6 +5,9 @@ import {
   getProductQuantityById,
   increaseItemQuantity,
 } from "./cartSlice";
+import { FaCaretRight, FaCaretLeft } from "react-icons/fa";
+import Modal from "../../ui/Modal";
+import ConfirmDelete from "./ConfirmDelete";
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,6 +15,17 @@ const Wrapper = styled.div`
 
   font-size: 2rem;
   gap: 1rem;
+
+  & svg {
+    transition: 0.3s;
+    cursor: pointer;
+    height: 2.4rem;
+    width: 2.4rem;
+    color: #8c8c8c;
+    &:hover {
+      color: black;
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -39,18 +53,41 @@ const Button = styled.button`
   }
 `;
 
-function UpdateProductQuantity({ productId }) {
+function UpdateProductQuantity({ productId, leftIcon, rightIcon }) {
   const quantity = useSelector(getProductQuantityById(productId));
   const dispatch = useDispatch();
+  function handleDecrease() {
+    dispatch(decreaseItemQuantity(productId));
+  }
+
+  function handleIncrease() {
+    dispatch(increaseItemQuantity(productId));
+  }
+
   return (
     <Wrapper>
-      <Button onClick={() => dispatch(decreaseItemQuantity(productId))}>
-        -
-      </Button>
+      {leftIcon ? (
+        <Modal>
+          <Modal.Open
+            confirm={quantity !== 1}
+            outsideFunction={handleDecrease}
+            opens={quantity === 1 ? "delete-modal" : ""}
+          >
+            <FaCaretLeft />
+          </Modal.Open>
+          <Modal.Window name="delete-modal">
+            <ConfirmDelete onClick={handleDecrease} />
+          </Modal.Window>
+        </Modal>
+      ) : (
+        <Button onClick={handleDecrease}>-</Button>
+      )}
       <span>{quantity}</span>
-      <Button onClick={() => dispatch(increaseItemQuantity(productId))}>
-        +
-      </Button>
+      {rightIcon ? (
+        <FaCaretRight onClick={handleIncrease} />
+      ) : (
+        <Button onClick={handleIncrease}>+</Button>
+      )}
     </Wrapper>
   );
 }

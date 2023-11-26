@@ -1,9 +1,10 @@
-import { BsDashLg } from "react-icons/bs";
 import styled, { keyframes } from "styled-components";
 import { formatCurrency } from "../../utils/helpers";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { deleteItem } from "./cartSlice";
 import { useDispatch } from "react-redux";
+import CartSizeSelection from "./CartSizeSelection";
+import UpdateProductQuantity from "./UpdateProductQuantity";
 
 const StyledCartItem = styled.div`
   display: grid;
@@ -12,6 +13,12 @@ const StyledCartItem = styled.div`
   align-items: center;
   border-bottom: 1px solid #eee;
   padding: 1rem 0;
+
+  div:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   img {
     width: 8rem;
@@ -64,8 +71,16 @@ function CartItem({ item }) {
         <img src={image} alt="product-image" />
       </div>
       <div>{name}</div>
-      <div>{quantity}</div>
-      <div>{size ? size : <BsDashLg />}</div>
+
+      <div>
+        <UpdateProductQuantity
+          productId={productId}
+          rightIcon={true}
+          leftIcon={true}
+        />
+      </div>
+      <div>{<CartSizeSelection value={size} id={productId} />}</div>
+
       <div>{formatCurrency(totalPrice)}</div>
       <div>
         <StyledTrashIcon onClick={() => dispatch(deleteItem(productId))} />
