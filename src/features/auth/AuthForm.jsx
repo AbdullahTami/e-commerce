@@ -158,19 +158,23 @@ function AuthForm() {
     e.preventDefault();
     if (!name || !password) return;
 
-    if (
+    if (password.split("").length < 8) {
+      toast.error("Password must be at least 8 characters long");
+    } else if (
       password
         .split("")
         .map((num) => parseInt(num))
-        .filter((value) => !Number.isNaN(value)).length <= 3
+        .filter((value) => !Number.isNaN(value)).length <= 2
     ) {
-      toast.error("Provided password must contain at least 3 digits");
+      toast.error("Password must contain at least 3 digits");
     } else {
       setIsLoading(true);
       setTimeout(() => {
         toast.success(`Welcome back, ${name}`);
         dispatch(updateName(name));
         navigate("/cart");
+        setName("");
+        setPassword("");
       }, 1500);
     }
   }
@@ -188,7 +192,7 @@ function AuthForm() {
               value={name}
             />
             <span></span>
-            <label htmlFor="name">Username</label>
+            <label htmlFor="name">Name</label>
           </InputField>
           <InputField $input={password}>
             <input
