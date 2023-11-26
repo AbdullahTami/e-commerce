@@ -1,5 +1,5 @@
 import { BsDashLg } from "react-icons/bs";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { formatCurrency } from "../../utils/helpers";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { deleteItem } from "./cartSlice";
@@ -29,8 +29,30 @@ const StyledCartItem = styled.div`
   }
 `;
 
+const rotate = keyframes`
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  75% {
+    transform: rotate(-60deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+`;
+
 const StyledTrashIcon = styled(FaRegTrashAlt)`
   cursor: pointer;
+  &:hover {
+    rotate: 20deg;
+    animation: ${rotate} 2s linear infinite;
+  }
 `;
 
 function CartItem({ item }) {
