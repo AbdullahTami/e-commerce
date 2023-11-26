@@ -6,6 +6,7 @@ import {
   getTotalCartPrice,
   getTotalQuantityInCart,
 } from "../features/cart/cartSlice";
+import { getUser } from "../features/auth/authUserSlice";
 
 const StyledNavCartAuth = styled.div`
   display: flex;
@@ -79,11 +80,15 @@ const StyledNavLink = styled(NavLink)`
 
 function NavCartAuth() {
   const totalPrice = useSelector(getTotalQuantityInCart);
+  const isLoggedIn = useSelector(getUser);
+
   return (
     <StyledNavCartAuth>
-      <StyledNavLink to="/auth">
-        <button>sign up</button>
-      </StyledNavLink>
+      {!isLoggedIn && (
+        <StyledNavLink to="/auth">
+          <button>login</button>
+        </StyledNavLink>
+      )}
 
       <StyledNavLink to="/cart">
         <span>

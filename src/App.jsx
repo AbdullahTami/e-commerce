@@ -8,6 +8,7 @@ import { Toaster } from "react-hot-toast";
 import SingleProductPage from "./pages/SingleProductPage";
 import CartPage from "./pages/CartPage";
 import AuthenticationPage from "./pages/AuthenticationPage";
+import ProtectedRoute from "./ui/ProtectedRoute";
 
 function App() {
   return (
@@ -18,7 +19,14 @@ function App() {
           <Route path="home" element={<HomePage />} />
           <Route path="product" element={<Products />} />
           <Route path="product/:productId" element={<SingleProductPage />} />
-          <Route path="cart" element={<CartPage />} />
+          <Route
+            path="cart"
+            element={
+              <ProtectedRoute>
+                <CartPage />
+              </ProtectedRoute>
+            }
+          />
           <Route path="auth" element={<AuthenticationPage />} />
           <Route path="about" element={<div>about</div>} />
           <Route path="faq" element={<div>faq</div>} />
