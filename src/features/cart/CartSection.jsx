@@ -64,7 +64,7 @@ function CartSection({ cart }) {
       </StyledCartSection>
       <Footer>
         <Price>
-          <span>Grand Total</span> {formatCurrency(grandTotal)}
+          <span>GRAND TOTAL</span> {formatCurrency(grandTotal)}
         </Price>
         <CartBottom />
       </Footer>

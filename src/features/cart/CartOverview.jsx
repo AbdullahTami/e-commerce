@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { BsDashLg } from "react-icons/bs";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { getCart, getTotalCartPrice } from "./cartSlice";
 import { formatCurrency } from "../../utils/helpers";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const StyledCartOverview = styled.div`
   height: 50vh;
@@ -34,12 +34,14 @@ const ItemShortDisplay = styled(Sections)`
 
   img {
     width: 8rem;
+    cursor: pointer;
+    ${(props) =>
+      props.$cursor &&
+      css`
+        cursor: not-allowed;
+      `}
   }
 `;
-
-// const StyledIcon = styled(FaRegTrashAlt)`
-//   cursor: pointer;
-// `;
 
 const Footer = styled.div`
   height: 4rem;
@@ -71,8 +73,20 @@ const TotalPrice = styled.span`
 function CartOverview({ onCloseModal }) {
   const cart = useSelector(getCart);
   const totalCartPrice = useSelector(getTotalCartPrice);
+  const navigate = useNavigate();
+  const { productId: params } = useParams();
+
+  let equalValues;
 
   if (!cart.length) onCloseModal();
+
+  function handleNavigation(id) {
+    equalValues = Number(params) === id;
+    if (equalValues) return;
+    navigate(`/product/${id}`);
+    onCloseModal();
+    scrollTo(0, 0);
+  }
 
   return (
     <>
@@ -86,8 +100,11 @@ function CartOverview({ onCloseModal }) {
         {cart.map((item) => {
           const { productId, image, quantity, size, totalPrice } = item;
           return (
-            <ItemShortDisplay key={productId}>
-              <div>
+            <ItemShortDisplay
+              $cursor={productId === Number(params)}
+              key={productId}
+            >
+              <div onClick={() => handleNavigation(productId)}>
                 <img src={image} />
               </div>
               <div>{quantity}</div>
