@@ -106,7 +106,7 @@ function Window({ orderWindow, name, children }) {
   if (name !== openName) return null;
   return createPortal(
     <Overlay $orderWindow={orderWindow}>
-      <StyledModal $orderWindow={orderWindow} ref={!orderWindow ? ref : {}}>
+      <StyledModal $orderWindow={orderWindow} ref={!orderWindow ? ref : null}>
         {orderWindow ? null : (
           <Button onClick={close}>
             <HiXMark />
