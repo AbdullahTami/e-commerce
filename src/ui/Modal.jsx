@@ -1,7 +1,7 @@
 import { cloneElement, createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 
 const StyledModal = styled.div`
@@ -13,7 +13,11 @@ const StyledModal = styled.div`
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
   padding: 3.2rem 4rem;
-  transition: all 0.3;
+  ${(props) =>
+    props.$orderWindow &&
+    css`
+      box-shadow: var(--shadow-md);
+    `}
 `;
 
 const Overlay = styled.div`
@@ -25,7 +29,12 @@ const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   z-index: 1000;
-  transition: all 0.3;
+  ${(props) =>
+    props.$orderWindow &&
+    css`
+      /* background: #fcfcfc; */
+      backdrop-filter: blur(50px);
+    `}
 `;
 
 const Button = styled.button`
@@ -63,25 +72,46 @@ function Modal({ children }) {
   );
 }
 
-function Open({ children, opens: opensWindowName, outsideFunction, confirm }) {
+function Open({
+  children,
+  order,
+  opens: opensWindowName,
+  outsideFunction,
+  confirm,
+  setIsLoading,
+}) {
   const { open } = useContext(ModalContext);
+
   return cloneElement(children, {
-    onClick: confirm ? outsideFunction : () => open(opensWindowName),
+    onClick: confirm
+      ? outsideFunction
+      : () => {
+          if (order) {
+            setIsLoading(true);
+            setTimeout(() => {
+              open(opensWindowName);
+              setIsLoading(false);
+            }, 1000);
+          } else {
+            open(opensWindowName);
+          }
+        },
   });
 }
 
-function Window({ name, children }) {
+function Window({ orderWindow, name, children }) {
   const { openName, close } = useContext(ModalContext);
-
   const { ref } = useOutsideClick(close);
 
   if (name !== openName) return null;
   return createPortal(
-    <Overlay>
-      <StyledModal ref={ref}>
-        <Button onClick={close}>
-          <HiXMark />
-        </Button>
+    <Overlay $orderWindow={orderWindow}>
+      <StyledModal $orderWindow={orderWindow} ref={!orderWindow ? ref : {}}>
+        {orderWindow ? null : (
+          <Button onClick={close}>
+            <HiXMark />
+          </Button>
+        )}
         <div>{cloneElement(children, { onCloseModal: close })}</div>
       </StyledModal>
     </Overlay>,

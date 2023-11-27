@@ -207,7 +207,7 @@ function AuthForm() {
           </InputField>
           <div className="pass">Forgot Password?</div>
           <Button disabled={isLoading}>
-            {isLoading ? <Spinner /> : "LOGIN"}
+            {isLoading ? <Spinner $formSpinner={true} /> : "LOGIN"}
           </Button>
           <div className="signup-link">
             You don&apos;t have an account? <a href="#">Signup</a>

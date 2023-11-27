@@ -66,7 +66,7 @@ function CartSection({ cart }) {
         <Price>
           <span>GRAND TOTAL</span> {formatCurrency(grandTotal)}
         </Price>
-        <CartBottom />
+        <CartBottom grandTotal={grandTotal} />
       </Footer>
     </Container>
   );

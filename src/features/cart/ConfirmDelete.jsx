@@ -35,6 +35,7 @@ const Button = styled.button`
   font-size: 1.6rem;
   padding: 0.8rem 1.2rem;
   font-weight: 500;
+  transition: 0.3s;
 
   &:hover {
     background: #991b1b;

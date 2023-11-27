@@ -64,14 +64,16 @@ function UpdateProductQuantity({ productId, leftIcon, rightIcon }) {
     dispatch(increaseItemQuantity(productId));
   }
 
+  const modalPopUp = quantity !== 1;
+
   return (
     <Wrapper>
       {leftIcon ? (
         <Modal>
           <Modal.Open
-            confirm={quantity !== 1}
+            confirm={modalPopUp}
             outsideFunction={handleDecrease}
-            opens={quantity === 1 ? "delete-modal" : ""}
+            opens={modalPopUp ? "" : "delete-modal"}
           >
             <FaCaretLeft />
           </Modal.Open>
