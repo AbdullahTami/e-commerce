@@ -1,26 +1,40 @@
-import { useState } from "react";
+import { BsCart2 } from "react-icons/bs";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { getTotalQuantityInCart } from "../features/cart/cartSlice";
+import { getUser } from "../features/auth/authUserSlice";
+import { HiMiniShoppingBag } from "react-icons/hi2";
+import { CiLogin } from "react-icons/ci";
 
-const NavList = styled.ul`
+const StyledAppNav = styled.div`
   display: flex;
   align-items: center;
-  gap: 4rem;
+
+  .login-cart-count {
+    width: 2.3rem;
+    height: 2.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5rem;
+    margin-left: -5.1rem;
+    font-size: 1.6rem;
+    border-radius: 1000px;
+    background: red;
+    color: white;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
-  transition: all 0.3s;
   text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
   &:link,
   &:visited {
     color: var(--grey-500);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
     padding: 1.2rem 2.4rem;
+    transition: all 0.3s;
   }
 
   &:hover,
@@ -30,46 +44,62 @@ const StyledNavLink = styled(NavLink)`
     color: var(--main-color);
   }
 
-  & hr {
-    width: 80%;
-    height: 0.3rem;
-    background: var(--main-color);
-    border: none;
-    border-radius: 0.3rem;
+  & svg {
+    width: 4rem;
+    height: 4rem;
+    color: var(--grey-400);
+    transition: all 0.3s;
+  }
+
+  &:hover svg,
+  &:active svg,
+  &.active:link svg,
+  &.active:visited svg {
+    color: var(--main-color);
+  }
+  button {
+    text-transform: uppercase;
+    width: 8rem;
+    height: 3.2rem;
+    outline: none;
+    border: 1px solid #7a7a7a;
+    border-radius: 1000px;
+    color: #515151;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: white;
+    &:hover {
+      background: #fbfbfb;
+    }
+    &:active {
+      background: #f1f1f1;
+    }
   }
 `;
 
 function AppNav() {
-  const [selectedPage, setSelectedPage] = useState("home");
+  const totalPrice = useSelector(getTotalQuantityInCart);
+  const isLoggedIn = useSelector(getUser);
+
   return (
-    <nav>
-      <NavList>
-        <li onClick={() => setSelectedPage("home")}>
-          <StyledNavLink to="/home">
-            <span>home</span>
-            {selectedPage === "home" && <hr />}
-          </StyledNavLink>
-        </li>
-        <li onClick={() => setSelectedPage("product")}>
-          <StyledNavLink to="/product">
-            <span>shop</span>
-            {selectedPage === "product" && <hr />}
-          </StyledNavLink>
-        </li>
-        <li onClick={() => setSelectedPage("about")}>
-          <StyledNavLink to="/about">
-            <span>about</span>
-            {selectedPage === "about" && <hr />}
-          </StyledNavLink>
-        </li>
-        <li onClick={() => setSelectedPage("faq")}>
-          <StyledNavLink to="/faq">
-            <span>faq</span>
-            {selectedPage === "faq" && <hr />}
-          </StyledNavLink>
-        </li>
-      </NavList>
-    </nav>
+    <StyledAppNav>
+      <StyledNavLink to="product">
+        <HiMiniShoppingBag />
+      </StyledNavLink>
+
+      {!isLoggedIn && (
+        <StyledNavLink to="/auth">
+          <CiLogin />
+        </StyledNavLink>
+      )}
+
+      <StyledNavLink to="/cart">
+        <span>
+          <BsCart2 />
+        </span>
+      </StyledNavLink>
+      <div className="login-cart-count">{totalPrice}</div>
+    </StyledAppNav>
   );
 }
 

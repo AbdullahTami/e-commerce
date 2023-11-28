@@ -116,6 +116,7 @@ function Order({ grandTotal }) {
   function handleNavigation(path) {
     dispatch(clearCart());
     navigate(path);
+    scrollTo(0, 0);
   }
 
   return (

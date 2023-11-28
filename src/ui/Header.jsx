@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import AppNav from "./AppNav";
 import Logo from "./Logo";
-import NavCartAuth from "./NavCartAuth";
+import AppNav from "./AppNav";
 
 const StyledHeader = styled.header`
   height: 8rem;
@@ -17,7 +16,6 @@ function Header() {
     <StyledHeader>
       <Logo />
       <AppNav />
-      <NavCartAuth />
     </StyledHeader>
   );
 }

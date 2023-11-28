@@ -40,8 +40,6 @@ const SizeButton = styled.button`
 
 function ProductSize({ sizes, productId }) {
   const selectedSize = useSelector(getProductSizeById(productId));
-  const product = useSelector(getProduct(productId));
-  console.log(product);
   const dispatch = useDispatch();
 
   return (

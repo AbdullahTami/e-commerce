@@ -69,7 +69,11 @@ function CartBottom({ grandTotal }) {
 
   return (
     <StyledCartBottom>
-      <StyledLink $disabled={isLoading} to="/product">
+      <StyledLink
+        onClick={() => scrollTo(0, 0)}
+        $disabled={isLoading}
+        to="/product"
+      >
         Continue shopping
         <span>
           <FaBasketShopping />
