@@ -125,7 +125,7 @@ function ProductDisplay({ product }) {
         <Img src={image} alt="product-image" />
         <ProductDetails>
           <h1>{name}</h1>
-          <ProductRating productRating={productRating} />
+          <ProductRating reviews={newPrice} productRating={productRating} />
           <Prices>
             <div className="old">{formatCurrency(oldPrice)}</div>
             <div className="new">{formatCurrency(newPrice)}</div>

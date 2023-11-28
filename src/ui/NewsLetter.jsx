@@ -118,7 +118,7 @@ function NewsLetter() {
     }
   }
   return (
-    <StyledNewsLetterSection>
+    <StyledNewsLetterSection id="email">
       <Container>
         <StyledNewsLetter>
           <NewsLetterText>

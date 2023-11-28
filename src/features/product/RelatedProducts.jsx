@@ -43,7 +43,6 @@ function RelatedProducts({ product }) {
     .filter((curProduct) => curProduct.id !== product.id);
 
   const settings = {
-    // dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,

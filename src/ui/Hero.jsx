@@ -62,7 +62,7 @@ function Hero() {
             <span className="sub-title">new arrivals only</span>
             <h1>new👋 collection for everyone</h1>
             <Button>
-              latest collection
+              <a href="#new-collection">latest collection</a>
               <span>
                 <BsArrowRight />
               </span>

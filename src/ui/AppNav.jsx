@@ -32,7 +32,6 @@ const StyledNavLink = styled(NavLink)`
   &:visited {
     color: var(--grey-500);
     font-size: 1.6rem;
-    font-weight: 500;
     padding: 1.2rem 2.4rem;
     transition: all 0.3s;
   }
@@ -51,29 +50,11 @@ const StyledNavLink = styled(NavLink)`
     transition: all 0.3s;
   }
 
-  &:hover svg,
-  &:active svg,
   &.active:link svg,
-  &.active:visited svg {
+  &.active:visited svg,
+  &:hover svg,
+  &:active svg {
     color: var(--main-color);
-  }
-  button {
-    text-transform: uppercase;
-    width: 8rem;
-    height: 3.2rem;
-    outline: none;
-    border: 1px solid #7a7a7a;
-    border-radius: 1000px;
-    color: #515151;
-    font-size: 1.6rem;
-    font-weight: 600;
-    background: white;
-    &:hover {
-      background: #fbfbfb;
-    }
-    &:active {
-      background: #f1f1f1;
-    }
   }
 `;
 

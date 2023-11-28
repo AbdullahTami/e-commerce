@@ -58,7 +58,7 @@ function NewCollections() {
   };
 
   return (
-    <NewCollectionSection>
+    <NewCollectionSection id="new-collection">
       <Container>
         <StyledNewCollection>
           <h1>#NewCollections</h1>

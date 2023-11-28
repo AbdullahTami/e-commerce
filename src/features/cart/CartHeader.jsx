@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import emptyCart from "../../assets/empty-cart.png";
 
-const StyledCartHeader = styled.p`
+const StyledCartHeader = styled.div`
   /* display: flex;
   justify-content: center; */
   padding: 6.4rem 6.4rem;

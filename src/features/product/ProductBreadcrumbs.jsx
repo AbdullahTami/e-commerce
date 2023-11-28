@@ -10,7 +10,7 @@ const StyledBreadcrumb = styled.div`
   color: var(--grey-500);
   font-size: 1.8rem;
   font-weight: 500;
-  margin: 1.6rem 0;
+  margin: 3.6rem 0 -1.5rem;
   text-transform: capitalize;
   & svg {
     color: var(--main-color);

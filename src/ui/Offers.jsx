@@ -52,7 +52,9 @@ function Offers() {
           <OffersText>
             <span className="sub-title">only on shopper store</span>
             <h1>exclusive offers just for you</h1>
-            <Button>check now</Button>
+            <Button>
+              <a href="#email">check now</a>
+            </Button>
           </OffersText>
           <Img src={exclusive_image} alt="sub-hero-image" />
         </StyledOffers>
