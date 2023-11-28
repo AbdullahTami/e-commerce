@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
-import Products from "./pages/Products";
+import ProductsPage from "./pages/ProductsPage";
 import Cart from "./features/cart/Cart";
 import PageNotFound from "./ui/PageNotFound";
 import HomePage from "./pages/HomePage";
@@ -17,7 +17,7 @@ function App() {
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to="home" />} />
           <Route path="home" element={<HomePage />} />
-          <Route path="product" element={<Products />} />
+          <Route path="product" element={<ProductsPage />} />
           <Route path="product/:productId" element={<SingleProductPage />} />
           <Route
             path="cart"
