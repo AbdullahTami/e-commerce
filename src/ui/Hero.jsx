@@ -41,18 +41,6 @@ const Img = styled.img`
   height: 85rem;
 `;
 
-//     display: inline-block;
-// text-decoration: none;
-// font-size: 2rem;
-// font-weight: 600;
-// padding: 1.6rem 3.2rem;
-// border-radius: 9px;
-// border: none;
-// cursor: pointer;
-// font-family: inherit;
-// transition: background-color 0.3s;
-// transition: all 0.3s;
-
 function Hero() {
   return (
     <StyledHeroSection>
@@ -61,12 +49,14 @@ function Hero() {
           <HeroText>
             <span className="sub-title">new arrivals only</span>
             <h1>new👋 collection for everyone</h1>
-            <Button>
-              <a href="#new-collection">latest collection</a>
-              <span>
-                <BsArrowRight />
-              </span>
-            </Button>
+            <a href="#new-collection">
+              <Button>
+                latest collection
+                <span>
+                  <BsArrowRight />
+                </span>
+              </Button>
+            </a>
           </HeroText>
 
           <Img src={hero} alt="hero-picture" />

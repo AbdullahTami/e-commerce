@@ -12,6 +12,7 @@ const StyledProduct = styled.div`
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-sm);
+
   p {
     color: var(--grey-700);
     margin: 10px 0;

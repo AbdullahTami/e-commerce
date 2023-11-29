@@ -1,9 +1,9 @@
 // import Container from "../ui/Container";
 import styled from "styled-components";
-import ProductOperations from "../features/product/ProductOperations";
-import ProductsShowcase from "../features/product/ProductsShowcase";
+import ProductOperations from "./ProductOperations";
+import ProductsShowcase from "./ProductsShowcase";
 import { useEffect, useState } from "react";
-import LoadingSpinner from "../ui/LoadingSpinner";
+import LoadingSpinner from "../../ui/LoadingSpinner";
 
 function Products() {
   const [isLoading, setIsLoading] = useState(false);

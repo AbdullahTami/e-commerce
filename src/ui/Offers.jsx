@@ -4,7 +4,7 @@ import exclusive_image from "../assets/exclusive_image.png";
 import Button from "./Button";
 
 const StyledOffersSection = styled.section`
-  padding: 12.8rem 3.2rem 6.4rem;
+  padding: 0 3.2rem 0rem;
 
   /* max-width: 120rem;
   margin: 0 auto; */
@@ -52,9 +52,9 @@ function Offers() {
           <OffersText>
             <span className="sub-title">only on shopper store</span>
             <h1>exclusive offers just for you</h1>
-            <Button>
-              <a href="#email">check now</a>
-            </Button>
+            <a href="#email">
+              <Button>Check now</Button>
+            </a>
           </OffersText>
           <Img src={exclusive_image} alt="sub-hero-image" />
         </StyledOffers>
