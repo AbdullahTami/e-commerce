@@ -1,8 +1,10 @@
-# React + Vite
+E-COMMERCE APPLICATION
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This e-commerce store project showcases my ability to use recent frontend technologies and pixel perfect methods to create high-quality web applications.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I've used Redux Toolkit global state management library in order to optimize performance through preventing wasted renders.
+I've also used Styled Components to customize the app appearance and went for React Router for building the application routing.
+The filtering and sorting functionality were implemented by storing state in the URL through query params in order to make it globally accessible throughout the entire application.
+I've integrated a modal using the compound component pattern.
+I've also chosen to prioritize user experience through optimizing bundle size using lazy loading functionality as well as simulating quasi-backend calls using API functions.
+Finally, I tried to put some efforts into implementing authentication experience for users with creative password validations.

@@ -67,7 +67,4 @@ function RelatedProducts({ product }) {
   );
 }
 
-/*
- */
-
 export default RelatedProducts;
