@@ -1,3 +1,5 @@
+
+
 E-COMMERCE APPLICATION
 
 This e-commerce store project showcases my ability to use recent frontend technologies and pixel perfect methods to create high-quality web applications.
@@ -13,3 +15,5 @@ I've integrated a modal using the compound component pattern.
 I've also chosen to prioritize user experience through optimizing bundle size using lazy loading functionality as well as simulating quasi-backend calls using API functions.
 
 Finally, I tried to put some efforts into implementing authentication experience for users with creative password validations.
+
+SEE PORJECT: https://shopper-ecommerce.netlify.app/
